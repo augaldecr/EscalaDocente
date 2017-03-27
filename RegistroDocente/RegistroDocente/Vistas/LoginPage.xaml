@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RegistroDocente.Vistas.LoginPage"
+             Title="Ingreso de usuario">
+    <ScrollView>
+        <StackLayout Padding="10" Spacing="10" x:Name="elStack">
+                <Label FontSize="30"
+                        HorizontalOptions="CenterAndExpand"
+                        Text="Ingreso al sistema"/>
+                <Label HorizontalOptions="CenterAndExpand"
+                        Text="Ingrese usuario y contraseña" />
+                <Entry x:Name="txtUsuario"
+                        Placeholder="Ingrese su usuario" />
+                <Entry x:Name="txtPassword"
+                        Placeholder="Ingrese su contraseña" />
+                <StackLayout Orientation="Horizontal" Spacing="10">
+                    <Label Text="Recordarme"
+                            VerticalOptions="EndAndExpand"/>
+                    <Switch x:Name="SwtchDefault"
+                            IsEnabled="True"
+                            VerticalOptions="End" />
+                </StackLayout>
+                <Button x:Name="btnIngresar"
+                        Text="Ingresar" />
+                <Button x:Name="btnRegistrarse"
+                        Text="Registrarse" />
+            </StackLayout>
+        </ScrollView>
+</ContentPage>

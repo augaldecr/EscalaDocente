@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RegistroDocente.Vistas.HomePage"
+             Title="Menú principal">
+    <!--Pages can be added as references or inline-->
+    <ContentPage Title="Matrícula">
+        <StackLayout>
+            <Label Text="Matrícula"  HorizontalTextAlignment="Center" HorizontalOptions="FillAndExpand" Margin="5" />
+            <BoxView Color="Green" VerticalOptions="FillAndExpand" />
+        </StackLayout>
+    </ContentPage>
+    <ContentPage Title="Sección">
+        <StackLayout>
+            <Label Text="Sección" HorizontalTextAlignment="Center" HorizontalOptions="FillAndExpand" Margin="5"  />
+            <BoxView Color="Blue" VerticalOptions="FillAndExpand" />
+        </StackLayout>
+    </ContentPage>
+    <ContentPage Title="Asistencia">
+        <StackLayout>
+            <Label Text="Asistencia"  HorizontalTextAlignment="Center" HorizontalOptions="FillAndExpand" Margin="5" />
+            <BoxView Color="Green" VerticalOptions="FillAndExpand" />
+        </StackLayout>
+    </ContentPage>
+    <ContentPage Title="Evaluaciones">
+        <StackLayout>
+            <Label Text="Evaluaciones" HorizontalTextAlignment="Center" HorizontalOptions="FillAndExpand" Margin="5"  />
+            <BoxView Color="Blue" VerticalOptions="FillAndExpand" />
+        </StackLayout>
+    </ContentPage>
+    <ContentPage Title="Planeamientos">
+        <StackLayout>
+            <Label Text="Planeamientos"  HorizontalTextAlignment="Center" HorizontalOptions="FillAndExpand" Margin="5" />
+            <BoxView Color="Green" VerticalOptions="FillAndExpand" />
+        </StackLayout>
+    </ContentPage>
+    <ContentPage Title="Configuraciones">
+        <StackLayout>
+            <Label Text="Configuraciones" HorizontalTextAlignment="Center" HorizontalOptions="FillAndExpand" Margin="5"  />
+            <BoxView Color="Blue" VerticalOptions="FillAndExpand" />
+        </StackLayout>
+    </ContentPage>
+</TabbedPage>
