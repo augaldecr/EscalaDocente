@@ -85,6 +85,8 @@
     <Compile Include="Clases\TipoPeriodicidadAsignatura.cs" />
     <Compile Include="Clases\TipoPeriodo.cs" />
     <Compile Include="Clases\Usuario.cs" />
+    <Compile Include="Controlador\DataAccess.cs" />
+    <Compile Include="IConfig.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Vistas\HomePage.xaml.cs">
       <DependentUpon>HomePage.xaml</DependentUpon>

@@ -1,7 +1,7 @@
 ﻿using SQLite.Net.Attributes;
 using System;
 
-namespace RegistroActividadesDocentes.Models
+namespace RegistroDocente.Clases
 { 
     //Referente a persona base de los diferentes individuos en el registro
     public class Persona

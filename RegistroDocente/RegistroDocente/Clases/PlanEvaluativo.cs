@@ -1,6 +1,6 @@
 ﻿using SQLite.Net.Attributes;
 
-namespace RegistroActividadesDocentes.Models
+namespace RegistroDocente.Clases
 {
     public class PlanEvaluativo
     {
