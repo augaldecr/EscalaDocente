@@ -3,46 +3,64 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="RegistroDocente.Vistas.RegistraUsuarioPage"
              Title="Registro de usuario">
-    <ScrollView>
-        <StackLayout Padding="10" Spacing="10" >
-            <Label FontSize="30"
-                    HorizontalOptions="CenterAndExpand"
-                    Text="Registro de usuario nuevo" />
-            <Label HorizontalOptions="CenterAndExpand"
-                    Text="Ingrese los datos correspondientes" />
-            <Entry x:Name="txtCedula"
-                    Placeholder="Ingrese su cédula"
-                    Keyboard="Text" />
-            <Entry x:Name="txtNombre"
-                    Placeholder="(Opcional) Ingrese su segundo apellido"
-                    Keyboard="Text" />
-            <Label Text="Ingrese su fecha de Nacimiento: " />    
-            <DatePicker x:Name="NacimientoDatePicker"
-                  MaximumDate="01/01/2000"/>
-            <Entry x:Name="txtEmail"
-             Placeholder="(Opcional) Ingrese su correo electrónico"
-             Keyboard="Email"/>
-            <Entry x:Name="txtCelular"
-             Placeholder="(Opcional) Ingrese su número de móvil"
-             Keyboard="Telephone"/>
-            <Entry x:Name="txtTelefono"
-             Placeholder="(Opcional) Ingrese su número de teléfono"
-             Keyboard="Telephone"/>
-            <Label Text="Ingrese usuario y contraseña:"
-             FontAttributes="Bold"
-             FontSize="18"/>
-            <Entry x:Name="txtUsuario"
-             Placeholder="Ingrese su usuario" />
-            <Entry x:Name="txtPassword"
-             Placeholder="Ingrese su contraseña" />
-            <StackLayout Orientation="Horizontal">
-                <Button x:Name="btnGuardar"
-                HorizontalOptions="CenterAndExpand"
-                Text="Guardar" />
-                <Button x:Name="btnReset"
-                HorizontalOptions="CenterAndExpand"
-                Text="Reiniciar" />
-            </StackLayout>
-        </StackLayout>
-    </ScrollView>
+    <TableView Intent="Form">
+        <TableRoot>
+            <TableSection Title="Registro de nuevo usuario">
+                <EntryCell x:Name="txtCedula"
+                               Label="Cédula: "
+                               Placeholder="Ingrese su cédula"
+                               Keyboard="Text" />
+                <EntryCell x:Name="txtNombre"
+                               Label="Nombre: "
+                               Placeholder="Ingrese su nombre"
+                               Keyboard="Text" />
+                <EntryCell x:Name="txtApellido1"
+                               Label="Primer apellido: "
+                               Placeholder="Ingrese su primer apellido"
+                               Keyboard="Text" />
+                <EntryCell x:Name="txtApellido2"
+                               Label="Segundo apellido: "
+                               Placeholder="(Opcional) Ingrese su segundo apellido"
+                               Keyboard="Text" />
+                <ViewCell>
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="Ingrese su fecha de Nacimiento: " />
+                        <DatePicker x:Name="NacimientoDatePicker"
+                                    MaximumDate="01/01/2000" />
+                    </StackLayout>
+                </ViewCell>
+                <EntryCell x:Name="txtEmail"
+                               Label="Email: "
+                               Placeholder="(Opcional) Ingrese su correo electrónico"
+                               Keyboard="Email"/>
+                <EntryCell x:Name="txtCelular"
+                               Label="Celular: "
+                               Placeholder="(Opcional) Ingrese su número de móvil"
+                               Keyboard="Telephone"/>
+                <EntryCell x:Name="txtTelefono"
+                               Label="Teléfono: "
+                               Placeholder="(Opcional) Ingrese su número de teléfono"
+                               Keyboard="Telephone" />
+                <EntryCell x:Name="txtUsuario"
+                               Label="Nuevo usuario: "
+                               Placeholder="Ingrese su usuario" />
+                <EntryCell x:Name="txtPassword"
+                               Label="Contraseña: "
+                               Placeholder="Ingrese su contraseña" />
+                <EntryCell x:Name="txtVerifica"
+                               Label="Confirmación"
+                               Placeholder="Ingrese su contraseña nuevamente" />
+                <ViewCell>
+                    <StackLayout Orientation="Horizontal">
+                        <Button x:Name="btnGuardar"
+                                HorizontalOptions="CenterAndExpand"
+                                Text="Guardar" />
+                        <Button x:Name="btnReset"
+                                HorizontalOptions="CenterAndExpand"
+                                Text="Reiniciar" />
+                    </StackLayout>
+                </ViewCell>
+            </TableSection>
+        </TableRoot>
+    </TableView>
 </ContentPage>
