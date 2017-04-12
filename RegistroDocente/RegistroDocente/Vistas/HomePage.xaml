@@ -10,12 +10,6 @@
             <BoxView Color="Green" VerticalOptions="FillAndExpand" />
         </StackLayout>
     </ContentPage>
-    <ContentPage Title="Sección">
-        <StackLayout>
-            <Label Text="Sección" HorizontalTextAlignment="Center" HorizontalOptions="FillAndExpand" Margin="5"  />
-            <BoxView Color="Blue" VerticalOptions="FillAndExpand" />
-        </StackLayout>
-    </ContentPage>
     <ContentPage Title="Asistencia">
         <StackLayout>
             <Label Text="Asistencia"  HorizontalTextAlignment="Center" HorizontalOptions="FillAndExpand" Margin="5" />
@@ -34,18 +28,26 @@
             <BoxView Color="Green" VerticalOptions="FillAndExpand" />
         </StackLayout>
     </ContentPage>
-    <ContentPage Title="Configuraciones">
-        <ScrollView>
-            <StackLayout VerticalOptions="CenterAndExpand"
-                         HorizontalOptions="CenterAndExpand">
-                <Button Text="Períodos"></Button>
-                <Button Text="Instituciones"></Button>
-                <Button Text="Asignaturas"></Button>
-                <Button Text="Secciones"></Button>
-                <Button Text="Horarios"></Button>
-                <Button Text="Porcentajes"></Button>
-                <Button Text="Ajustes de App"></Button>
-            </StackLayout>
-        </ScrollView>
+    <ContentPage Title="Ajustes">
+        <TableView Intent="Settings">
+            <TableRoot>
+                <TableSection Title="Ajustes">
+                    <TextCell Text="Períodos"
+                              TextColor="Blue"></TextCell>
+                    <TextCell Text="Instituciones"
+                              TextColor="Blue"></TextCell>
+                    <TextCell Text="Asignaturas"
+                              TextColor="Blue"></TextCell>
+                    <TextCell Text="Secciones"
+                              TextColor="Blue"></TextCell>
+                    <TextCell Text="Horarios"
+                              TextColor="Blue"></TextCell>
+                    <TextCell Text="Porcentajes"
+                              TextColor="Blue"></TextCell>
+                    <TextCell Text="Ajustes de App"
+                              TextColor="Blue"></TextCell>
+                </TableSection>
+            </TableRoot>
+        </TableView>
     </ContentPage>
 </TabbedPage>
