@@ -35,9 +35,17 @@
         </StackLayout>
     </ContentPage>
     <ContentPage Title="Configuraciones">
-        <StackLayout>
-            <Label Text="Configuraciones" HorizontalTextAlignment="Center" HorizontalOptions="FillAndExpand" Margin="5"  />
-            <BoxView Color="Blue" VerticalOptions="FillAndExpand" />
-        </StackLayout>
+        <ScrollView>
+            <StackLayout VerticalOptions="CenterAndExpand"
+                         HorizontalOptions="CenterAndExpand">
+                <Button Text="Períodos"></Button>
+                <Button Text="Instituciones"></Button>
+                <Button Text="Asignaturas"></Button>
+                <Button Text="Secciones"></Button>
+                <Button Text="Horarios"></Button>
+                <Button Text="Porcentajes"></Button>
+                <Button Text="Ajustes de App"></Button>
+            </StackLayout>
+        </ScrollView>
     </ContentPage>
 </TabbedPage>

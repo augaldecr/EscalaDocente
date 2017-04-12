@@ -1,4 +1,4 @@
-﻿using RegistroDocente.Clases;
+﻿using RegistroDocente.Models;
 using SQLite.Net;
 using System;
 using System.Collections.Generic;
@@ -21,7 +21,7 @@ namespace RegistroDocente.Controlador
         }
 
         #region Persona
-        public void InsertarPersona(Persona obj)
+        public void InsertPersona(Persona obj)
         {
             connection.Insert(obj);
         }
@@ -48,7 +48,7 @@ namespace RegistroDocente.Controlador
         #endregion
 
         #region Usuario
-        public void InsertarUsuario(Usuario obj)
+        public void InsertUsuario(Usuario obj)
         {
             connection.Insert(obj);
         }
@@ -70,16 +70,16 @@ namespace RegistroDocente.Controlador
 
         public Usuario GetUsuarioXUser(string user)
         {
-            return connection.Table<Usuario>().FirstOrDefault(x => x.usuario == user);
+            return connection.Table<Usuario>().FirstOrDefault(x => x.User == user);
         }
 
         public bool GetUsuariosDefault()
         {
             bool contiene = false;
 
-            foreach (var item in connection.Table<Usuario>().OrderBy(x => x.usuario).ToList())
+            foreach (var item in connection.Table<Usuario>().OrderBy(x => x.User).ToList())
             {
-                if (item.defecto)
+                if (item.Defecto)
                 {
                     contiene = true;
                 }
@@ -89,7 +89,7 @@ namespace RegistroDocente.Controlador
 
         public List<Usuario> GetUsuarios()
         {
-            return connection.Table<Usuario>().OrderBy(x => x.usuario).ToList();
+            return connection.Table<Usuario>().OrderBy(x => x.User).ToList();
         }
         #endregion
 
@@ -102,7 +102,7 @@ namespace RegistroDocente.Controlador
         {
             con.CreateTable<Persona>();
             con.CreateTable<Usuario>();
-            con.CreateTable<AdecuacionCurricular>();
+            /*con.CreateTable<AdecuacionCurricular>();
             con.CreateTable<Anho>();
             con.CreateTable<Asignatura>();
             con.CreateTable<CalificacionXIndicadores>();
@@ -142,7 +142,7 @@ namespace RegistroDocente.Controlador
             con.CreateTable<TipoInAsistencia>();
             con.CreateTable<TipoMatricula>();
             con.CreateTable<TipoPeriodicidadAsignatura>();
-            con.CreateTable<TipoPeriodo>();
+            con.CreateTable<TipoPeriodo>();*/
         }
     }
 }
