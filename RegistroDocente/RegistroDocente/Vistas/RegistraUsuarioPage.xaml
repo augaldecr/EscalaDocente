@@ -2,53 +2,44 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="RegistroDocente.Vistas.RegistraUsuarioPage"
-             Title="Registro de usuario">
+             Title="Registro de usuario"
+             Padding="10">
     <TableView Intent="Form">
         <TableRoot>
             <TableSection Title="Registro de nuevo usuario">
                 <EntryCell x:Name="txtCedula"
-                               Label="Cédula: "
                                Placeholder="Ingrese su cédula"
                                Keyboard="Text" />
                 <EntryCell x:Name="txtNombre"
-                               Label="Nombre: "
                                Placeholder="Ingrese su nombre"
                                Keyboard="Text" />
                 <EntryCell x:Name="txtApellido1"
-                               Label="Primer apellido: "
                                Placeholder="Ingrese su primer apellido"
                                Keyboard="Text" />
                 <EntryCell x:Name="txtApellido2"
-                               Label="Segundo apellido: "
                                Placeholder="(Opcional) Ingrese su segundo apellido"
                                Keyboard="Text" />
                 <ViewCell>
                     <StackLayout Orientation="Horizontal">
-                        <Label Text="Ingrese su fecha de Nacimiento: " />
+                        <Label Text="Fecha de Nacimiento: " />
                         <DatePicker x:Name="NacimientoDatePicker"
                                     MaximumDate="01/01/2000" />
                     </StackLayout>
                 </ViewCell>
                 <EntryCell x:Name="txtEmail"
-                               Label="Email: "
-                               Placeholder="(Opcional) Ingrese su correo electrónico"
+                               Placeholder="(Opcional) Ingrese su email"
                                Keyboard="Email"/>
                 <EntryCell x:Name="txtCelular"
-                               Label="Celular: "
                                Placeholder="(Opcional) Ingrese su número de móvil"
                                Keyboard="Telephone"/>
                 <EntryCell x:Name="txtTelefono"
-                               Label="Teléfono: "
                                Placeholder="(Opcional) Ingrese su número de teléfono"
                                Keyboard="Telephone" />
                 <EntryCell x:Name="txtUsuario"
-                               Label="Nuevo usuario: "
                                Placeholder="Ingrese su usuario" />
                 <EntryCell x:Name="txtPassword"
-                               Label="Contraseña: "
                                Placeholder="Ingrese su contraseña" />
                 <EntryCell x:Name="txtVerifica"
-                               Label="Confirmación"
                                Placeholder="Ingrese su contraseña nuevamente" />
                 <ViewCell>
                     <StackLayout Orientation="Horizontal">

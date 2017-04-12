@@ -87,7 +87,9 @@
     <Compile Include="Clases\Usuario.cs" />
     <Compile Include="Controlador\DataAccess.cs" />
     <Compile Include="IConfig.cs" />
+    <Compile Include="Infrastructure\InstanceLocator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\MainViewModel.cs" />
     <Compile Include="Vistas\HomePage.xaml.cs">
       <DependentUpon>HomePage.xaml</DependentUpon>
     </Compile>
