@@ -3,10 +3,10 @@
 namespace RegistroDocente.Clases
 {
     //Clase referente a usuario de registro, normalmente un usuario único
-    public class Usuario
+    public class Usuario : Persona
     {
         [PrimaryKey, AutoIncrement]
-        public int ID { get; set; }
+        public new int ID { get; set; }
         [NotNull]
         public string usuario { get; set; }
         [NotNull]
