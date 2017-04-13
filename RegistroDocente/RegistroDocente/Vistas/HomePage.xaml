@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:RegistroDocente.ViewModels"
              x:Class="RegistroDocente.Vistas.HomePage"
              Title="Menú principal">
     <!--Pages can be added as references or inline-->
@@ -29,25 +30,35 @@
         </StackLayout>
     </ContentPage>
     <ContentPage Title="Ajustes">
+        <ContentPage.BindingContext>
+            <vm:MainViewModel />
+        </ContentPage.BindingContext>
         <TableView Intent="Settings">
-            <TableRoot>
-                <TableSection Title="Ajustes">
-                    <TextCell Text="Períodos"
-                              TextColor="Blue"></TextCell>
-                    <TextCell Text="Instituciones"
-                              TextColor="Blue"></TextCell>
-                    <TextCell Text="Asignaturas"
-                              TextColor="Blue"></TextCell>
-                    <TextCell Text="Secciones"
-                              TextColor="Blue"></TextCell>
-                    <TextCell Text="Horarios"
-                              TextColor="Blue"></TextCell>
-                    <TextCell Text="Porcentajes"
-                              TextColor="Blue"></TextCell>
-                    <TextCell Text="Ajustes de App"
-                              TextColor="Blue"></TextCell>
-                </TableSection>
-            </TableRoot>
+        <TableRoot>
+            <TableSection Title="Ajustes">
+                <TextCell Text="Períodos"
+                          TextColor="Blue" 
+                          Command="{Binding Periodos}"></TextCell>
+                <TextCell Text="Instituciones"
+                          TextColor="Blue"
+                          Command="{Binding Instituciones}"></TextCell>
+                <TextCell Text="Asignaturas"
+                          TextColor="Blue"
+                          Command="{Binding Asignaturas}"></TextCell>
+                <TextCell Text="Secciones"
+                          TextColor="Blue"
+                          Command="{Binding Secciones}"></TextCell>
+                <TextCell Text="Horarios"
+                          TextColor="Blue"
+                          Command="{Binding Horarios}"></TextCell>
+                <TextCell Text="Porcentajes"
+                          TextColor="Blue"
+                          Command="{Binding Porcentajes}"></TextCell>
+                <TextCell Text="Ajustes de App"
+                          TextColor="Blue"
+                          Command="{Binding Ajustes}"></TextCell>
+            </TableSection>
+        </TableRoot>
         </TableView>
     </ContentPage>
 </TabbedPage>
