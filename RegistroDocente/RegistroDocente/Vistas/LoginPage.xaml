@@ -2,28 +2,31 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="RegistroDocente.Vistas.LoginPage"
+             xmlns:vm="clr-namespace:RegistroDocente.ViewModels"
              Title="Ingreso de usuario">
+    <ContentPage.BindingContext>
+        <vm:UsuarioViewModel />
+    </ContentPage.BindingContext>
     <ScrollView>
-        <StackLayout Padding="10" Spacing="10" x:Name="elStack">
-                <Label FontSize="30"
+        <StackLayout Padding="10" Spacing="10">
+            <Label FontSize="30"
                         HorizontalOptions="CenterAndExpand"
                         Text="Ingreso al sistema"/>
                 <Label HorizontalOptions="CenterAndExpand"
-                        Text="Ingrese usuario y contraseña" />
-                <Entry x:Name="txtUsuario"
-                        Placeholder="Ingrese su usuario" />
-                <Entry x:Name="txtPassword"
-                        Placeholder="Ingrese su contraseña" />
+                       Text="Ingrese usuario y contraseña" />
+                <Entry Placeholder="Ingrese su usuario"
+                       Text="{Binding User, Mode=TwoWay}" />
+                <Entry Placeholder="Ingrese su contraseña"
+                       Text="{Binding Password, Mode=TwoWay}" />
                 <StackLayout Orientation="Horizontal" Spacing="10">
                     <Label Text="Recordarme"
                             VerticalOptions="EndAndExpand"/>
-                    <Switch x:Name="SwtchDefault"
-                            IsEnabled="True"
+                    <Switch IsEnabled="{Binding Default, Mode=TwoWay}"
                             VerticalOptions="End" />
                 </StackLayout>
-                <Button x:Name="btnIngresar"
+                <Button Command="{Binding Login}" 
                         Text="Ingresar" />
-                <Button x:Name="btnRegistrarse"
+                <Button Command="{Binding Register}"
                         Text="Registrarse" />
             </StackLayout>
         </ScrollView>

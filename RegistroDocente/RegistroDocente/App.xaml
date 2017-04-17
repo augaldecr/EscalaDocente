@@ -1,12 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Application xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:infra="clr-namespace:RegistroDocente.Infrastructure;assembly=RegistroDocente"
              x:Class="RegistroDocente.App">
 	<Application.Resources>
         <ResourceDictionary>
-            <!-- Locator -->
-            <infra:InstanceLocator x:Key="Locator"></infra:InstanceLocator>
+            <!--Mensaje para errores  de campo faltantes-->
+            <x:String x:Key="MissingText">Ingrese el campo faltante: </x:String>
         </ResourceDictionary>
     </Application.Resources>
 </Application>

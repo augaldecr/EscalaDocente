@@ -14,11 +14,12 @@ namespace RegistroDocente.Vistas
 {
 
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class RegistraUsuarioPage : ContentPage
+    public partial class UsuarioPage : ContentPage
     {
-        public RegistraUsuarioPage()
+        public UsuarioPage(string ced)
         {
             InitializeComponent();
+            Cedula.Text = ced;
         }
     }
 }

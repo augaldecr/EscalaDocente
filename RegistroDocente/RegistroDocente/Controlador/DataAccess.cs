@@ -20,76 +20,222 @@ namespace RegistroDocente.Controlador
             CreaTablas(connection);
         }
 
+        #region Periodo
+        public void InsertPeriodo(Periodo obj)
+        {
+            try
+            {
+                connection.Insert(obj);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public void UpdatePeriodo(Periodo obj)
+        {
+            try
+            {
+                connection.Update(obj);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public void DeletePeriodo(Periodo obj)
+        {
+            try
+            {
+                connection.Delete(obj);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public Periodo GetPeriodo(int id)
+        {
+            try
+            {
+                return connection.Table<Periodo>().FirstOrDefault(x => x.ID == id);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public List<Periodo> GetPeriodos()
+        {
+            try
+            {
+                return connection.Table<Periodo>().OrderBy(x => x.FechaInicio).ToList();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+        #endregion
+
         #region Persona
         public void InsertPersona(Persona obj)
         {
-            connection.Insert(obj);
+            try
+            {
+                connection.Insert(obj);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
         }
 
         public void UpdatePersona(Persona obj)
         {
-            connection.Update(obj);
+            try
+            {
+                connection.Update(obj);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
         }
 
         public void DeletePersona(Persona obj)
         {
-            connection.Delete(obj);
+            try
+            {
+                connection.Delete(obj);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
         }
 
         public Persona GetPersona(string cedula)
         {
-            return connection.Table<Persona>().FirstOrDefault(x => x.Cedula == cedula);
+            try
+            {
+                return connection.Table<Persona>().FirstOrDefault(x => x.Cedula == cedula);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
         }
 
         public List<Persona> GetPersonas()
         {
-            return connection.Table<Persona>().OrderBy(x => x.Apellido1).ToList();
+            try
+            {
+                return connection.Table<Persona>().OrderBy(x => x.Apellido1).ToList();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
         }
         #endregion
 
         #region Usuario
         public void InsertUsuario(Usuario obj)
         {
-            connection.Insert(obj);
+            try
+            {
+                connection.Insert(obj);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
         }
 
         public void UpdateUsuario(Usuario obj)
         {
-            connection.Update(obj);
+            try
+            {
+                connection.Update(obj);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
         }
 
         public void DeleteUsuario(Usuario obj)
         {
-            connection.Delete(obj);
+            try
+            {
+                connection.Delete(obj);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
         }
 
         public Usuario GetUsuario(int ID)
         {
-            return connection.Table<Usuario>().FirstOrDefault(x => x.ID == ID);
+            try
+            {
+                return connection.Table<Usuario>().FirstOrDefault(x => x.ID == ID);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
         }
 
         public Usuario GetUsuarioXUser(string user)
         {
-            return connection.Table<Usuario>().FirstOrDefault(x => x.User == user);
+            try
+            {
+                return connection.Table<Usuario>().FirstOrDefault(x => x.User == user);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
         }
 
         public bool GetUsuariosDefault()
         {
-            bool contiene = false;
-
-            foreach (var item in connection.Table<Usuario>().OrderBy(x => x.User).ToList())
+            try
             {
-                if (item.Defecto)
+                bool contiene = false;
+
+                foreach (var item in connection.Table<Usuario>().OrderBy(x => x.User).ToList())
                 {
-                    contiene = true;
+                    if (item.Defecto)
+                    {
+                        contiene = true;
+                    }
                 }
+                return contiene;
             }
-            return contiene;
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
         }
 
         public List<Usuario> GetUsuarios()
         {
-            return connection.Table<Usuario>().OrderBy(x => x.User).ToList();
+            try
+            {
+                return connection.Table<Usuario>().OrderBy(x => x.User).ToList();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
         }
         #endregion
 
@@ -130,9 +276,9 @@ namespace RegistroDocente.Controlador
             con.CreateTable<Nivel>();
             con.CreateTable<NivelEscolar>();
             con.CreateTable<Pais>();
-            con.CreateTable<PaseDeLista>();
+            con.CreateTable<PaseDeLista>();*/
             con.CreateTable<Periodo>();
-            con.CreateTable<PlanEvaluativo>();
+            /*con.CreateTable<PlanEvaluativo>();
             con.CreateTable<Provincia>();
             con.CreateTable<Puesto>();
             con.CreateTable<Regional>();

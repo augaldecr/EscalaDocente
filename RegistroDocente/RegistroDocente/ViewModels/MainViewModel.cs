@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using RegistroDocente.Vistas;
 using System.Windows.Input;
 using Xamarin.Forms;
 
@@ -24,7 +20,7 @@ namespace RegistroDocente.ViewModels
         public MainViewModel()
         {
             Periodos = new Command(() => {
-                App.Current.MainPage.DisplayAlert("Aviso","Tu puta madre","Aceptar");
+                PeriodosCommand();
             });
             Instituciones = new Command(() => {
                 App.Current.MainPage.DisplayAlert("Aviso", "Tu puta madre", "Aceptar");
@@ -48,7 +44,10 @@ namespace RegistroDocente.ViewModels
         #endregion
 
         #region Commands
-
+        private async void PeriodosCommand()
+        {
+            await Application.Current.MainPage.Navigation.PushModalAsync(new PeriodosPage());
+        }
         #endregion
     }
 }

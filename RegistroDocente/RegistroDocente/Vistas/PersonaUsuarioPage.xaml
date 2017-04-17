@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RegistroDocente.Vistas.PersonaUsuarioPage"
+             xmlns:vm="clr-namespace:RegistroDocente.ViewModels"
+             Title="Registro de nueva Persona"
+             Padding="8">
+    <ContentPage.BindingContext>
+        <vm:PersonaViewModel />
+    </ContentPage.BindingContext>
+    <TableView Intent="Form">
+        <TableRoot>
+            <TableSection Title="Registro de nuevo usuario">
+                <EntryCell Keyboard="Text"
+                           Placeholder="Ingrese su cédula"
+                           Text="{Binding Cedula, Mode=TwoWay}" />
+                <EntryCell Keyboard="Text"
+                           Placeholder="Ingrese su nombre"
+                           Text="{Binding Nombre, Mode=TwoWay}" />
+                <EntryCell Keyboard="Text"
+                           Placeholder="Ingrese su primer apellido"
+                           Text="{Binding Apellido1, Mode=TwoWay}" />
+                <EntryCell Keyboard="Text"
+                           Placeholder="(Opcional) Ingrese su segundo apellido"
+                           Text="{Binding Apellido2, Mode=TwoWay}" />
+                <ViewCell>
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="Fecha de Nacimiento: " />
+                        <DatePicker Date="{Binding FechaNacimiento, Mode=TwoWay}"
+                                    MaximumDate="01/01/2000" />
+                    </StackLayout>
+                </ViewCell>
+                <EntryCell Keyboard="Email"
+                           Placeholder="(Opcional) Ingrese su email"
+                           Text="{Binding Email, Mode=TwoWay}" />
+                <EntryCell Keyboard="Telephone"
+                           Placeholder="(Opcional) Ingrese su número de móvil"
+                           Text="{Binding Celular, Mode=TwoWay}"    />
+                <EntryCell Keyboard="Telephone"
+                           Placeholder="(Opcional) Ingrese su número de teléfono"
+                           Text="{Binding Telefono, Mode=TwoWay}" />
+                <ViewCell>
+                    <StackLayout Orientation="Horizontal">
+                        <Button Command="{Binding NewUserPerson}"
+                                HorizontalOptions="CenterAndExpand"
+                                Text="Guardar" />
+                        <Button Command="{Binding New}"
+                                HorizontalOptions="CenterAndExpand"
+                                Text="Reiniciar" />
+                    </StackLayout>
+                </ViewCell>
+            </TableSection>
+        </TableRoot>
+    </TableView>
+</ContentPage>

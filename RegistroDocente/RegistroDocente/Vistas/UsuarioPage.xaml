@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RegistroDocente.Vistas.UsuarioPage"
+             xmlns:vm="clr-namespace:RegistroDocente.ViewModels"
+             Title="Registro de usuario"
+             Padding="8">
+    <ContentPage.BindingContext>
+        <vm:UsuarioViewModel />
+    </ContentPage.BindingContext>
+    <TableView Intent="Form">
+        <TableRoot>
+            <TableSection Title="Registro de nuevo usuario">
+                <EntryCell Placeholder="Ingrese su usuario" 
+                           Text="{Binding User, Mode=TwoWay}"/>
+                <EntryCell Placeholder="Ingrese su contraseña"
+                           Text="{Binding Password, Mode=Default}"/>
+                <EntryCell Placeholder="Ingrese su contraseña nuevamente" 
+                           Text="{Binding PasswordComfirm, Mode=Default}"/>
+                <ViewCell>
+                    <StackLayout Orientation="Horizontal">
+                        <Label  Text="{Binding Persona}" 
+                                x:Name="Cedula"/>
+                        <Button Command="{Binding Insert}"
+                                HorizontalOptions="CenterAndExpand"
+                                Text="Guardar" />
+                        <Button Command="{Binding New}"
+                                HorizontalOptions="CenterAndExpand"
+                                Text="Reiniciar" />
+                    </StackLayout>
+                </ViewCell>
+            </TableSection>
+        </TableRoot>
+    </TableView>
+</ContentPage>
