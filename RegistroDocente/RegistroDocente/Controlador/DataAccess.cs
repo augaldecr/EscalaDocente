@@ -205,6 +205,36 @@ namespace RegistroDocente.Controlador
             }
         }
 
+        public bool TryUsuario(string user, string pass)
+        {
+            try
+            {
+                if (connection.Table<Usuario>().FirstOrDefault(x => x.User == user) != null)
+                {
+                    using (DataAccess db = new DataAccess())
+                    {
+                        Usuario existente = db.GetUsuarioXUser(user);
+                        if (existente.Password == pass)
+                        {
+                            return true;
+                        } else
+                        {
+                            return false;
+                        }
+
+                    }
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
         public bool GetUsuariosDefault()
         {
             try

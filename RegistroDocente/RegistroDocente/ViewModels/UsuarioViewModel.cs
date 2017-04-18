@@ -30,7 +30,6 @@ namespace RegistroDocente.ViewModels
                     Persona = Persona,
                     Defecto = Defecto,
                     PasswordConfirm = PasswordConfirm
-                    
                 };
 
                 if (Password == PasswordConfirm)
@@ -101,17 +100,41 @@ namespace RegistroDocente.ViewModels
                 };
             });
 
-            Login = new Command(() => { LoginIn(); });
+            Login = new Command(() => {
+                Usuario user = new Usuario()
+                {
+                    User = User,
+                    Password = Password,
+                };
+                LoginIn(user);
+            });
 
             Register = new Command(() => { RegisterNewUser(); });
         }
-
         #endregion
 
         #region Methods
-        private async void LoginIn()
+        private async void LoginIn(Usuario user)
         {
-            await Application.Current.MainPage.Navigation.PushModalAsync(new HomePage());
+            using (DataAccess db = new DataAccess())
+            {
+                try
+                {
+                    if (db.TryUsuarioXUser(user.User))
+                    {
+                        await Application.Current.MainPage.Navigation.PushModalAsync(new HomePage());
+                    }
+                    else
+                    {
+
+                    }
+                }
+                catch (Exception)
+                {
+                    throw;
+                }
+
+            }
         }
 
         private async void RegisterNewUser()
