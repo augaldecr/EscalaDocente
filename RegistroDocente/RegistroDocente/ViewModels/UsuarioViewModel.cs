@@ -120,7 +120,7 @@ namespace RegistroDocente.ViewModels
             {
                 try
                 {
-                    if (db.TryUsuarioXUser(user.User))
+                    if (db.TryUsuario(user.User, user.Password))
                     {
                         await Application.Current.MainPage.Navigation.PushModalAsync(new HomePage());
                     }

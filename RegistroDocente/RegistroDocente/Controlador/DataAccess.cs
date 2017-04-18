@@ -205,6 +205,7 @@ namespace RegistroDocente.Controlador
             }
         }
 
+        //TODO: Revisar funcionamiento
         public bool TryUsuario(string user, string pass)
         {
             try
