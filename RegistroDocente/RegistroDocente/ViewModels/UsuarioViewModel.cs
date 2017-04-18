@@ -16,7 +16,6 @@ namespace RegistroDocente.ViewModels
         public ICommand New { get; private set; }
         public ICommand Login { get; private set; }
         public ICommand Register { get; private set; }
-        public String PasswordComfirm { get; private set; }
         #endregion
 
         #region Constructor
@@ -29,17 +28,21 @@ namespace RegistroDocente.ViewModels
                     User = User,
                     Password = Password,
                     Persona = Persona,
-                    Defecto = Defecto
+                    Defecto = Defecto,
+                    PasswordConfirm = PasswordConfirm
+                    
                 };
 
-                if (Password == PasswordComfirm)
+                if (Password == PasswordConfirm)
                 {
                     try
                     {
                         using (DataAccess db = new DataAccess())
                         {
                             db.InsertUsuario(p);
-                            Application.Current.MainPage.Navigation.PopToRootAsync();
+                            openAlert("Éxito", "Usuario registrado de manera correcta", "Aceptar");
+                            goBack();
+                            goBack();
                         }
                     }
                     catch (Exception ex)
@@ -51,7 +54,6 @@ namespace RegistroDocente.ViewModels
                 {
                     openAlert("Aviso", "Las contraseñas no coinciden, reintente", "Aceptar");
                 }
-
             });
 
             Update = new Command(() =>
@@ -120,6 +122,11 @@ namespace RegistroDocente.ViewModels
         private async void openAlert(string title, string message, string button)
         {
             await Application.Current.MainPage.DisplayAlert(title, message, button);
+        }
+
+        private async void goBack()
+        {
+            await Application.Current.MainPage.Navigation.PopModalAsync();
         }
         #endregion
     }

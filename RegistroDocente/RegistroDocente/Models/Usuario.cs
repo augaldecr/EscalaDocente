@@ -10,6 +10,7 @@ namespace RegistroDocente.Models
         private int iD;
         private string user;
         private string password;
+        private string passwordConfirm;
         private int persona;
         private bool defecto;
         #endregion
@@ -60,6 +61,21 @@ namespace RegistroDocente.Models
                 {
                     password = value;
                     OnPropertyChanged("password");
+                }
+            }
+        }
+        public string PasswordConfirm
+        {
+            get
+            {
+                return passwordConfirm;
+            }
+            set
+            {
+                if (passwordConfirm != value)
+                {
+                    passwordConfirm = value;
+                    OnPropertyChanged("passwordConfirm");
                 }
             }
         }

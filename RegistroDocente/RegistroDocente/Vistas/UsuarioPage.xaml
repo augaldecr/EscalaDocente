@@ -16,7 +16,7 @@
                 <EntryCell Placeholder="Ingrese su contraseña"
                            Text="{Binding Password, Mode=Default}"/>
                 <EntryCell Placeholder="Ingrese su contraseña nuevamente" 
-                           Text="{Binding PasswordComfirm, Mode=Default}"/>
+                           Text="{Binding PasswordConfirm, Mode=Default}"/>
                 <ViewCell>
                     <StackLayout Orientation="Horizontal">
                         <Label  Text="{Binding Persona}" 
