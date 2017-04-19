@@ -205,7 +205,6 @@ namespace RegistroDocente.Controlador
             }
         }
 
-        //TODO: Revisar funcionamiento
         public bool TryUsuario(string user, string pass)
         {
             try
@@ -255,6 +254,29 @@ namespace RegistroDocente.Controlador
             {
                 throw new Exception(ex.Message);
             }
+        }
+
+        public Usuario GetUsuarioDefault()
+        {
+            try
+            {
+                foreach (var item in connection.Table<Usuario>().OrderBy(x => x.ID).ToList())
+                {
+                    if (item.Defecto)
+                    {
+                        return item;
+                    }
+                    else
+                    {
+                        return null;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            return null;
         }
 
         public List<Usuario> GetUsuarios()

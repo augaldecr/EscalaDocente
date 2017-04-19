@@ -39,19 +39,19 @@ namespace RegistroDocente.ViewModels
                         using (DataAccess db = new DataAccess())
                         {
                             db.InsertUsuario(p);
-                            openAlert("Éxito", "Usuario registrado de manera correcta", "Aceptar");
-                            goBack();
-                            goBack();
+                            OpenAlert("Éxito", "Usuario registrado de manera correcta", "Aceptar");
+                            GoBack();
+                            GoBack();
                         }
                     }
                     catch (Exception ex)
                     {
-                        openAlert("Error", Utils.Utils.extractException(ex.Message), "Aceptar");
+                        OpenAlert("Error", Utils.Utils.extractException(ex.Message), "Aceptar");
                     }
                 }
                 else
                 {
-                    openAlert("Aviso", "Las contraseñas no coinciden, reintente", "Aceptar");
+                    OpenAlert("Aviso", "Las contraseñas no coinciden, reintente", "Aceptar");
                 }
             });
 
@@ -101,12 +101,7 @@ namespace RegistroDocente.ViewModels
             });
 
             Login = new Command(() => {
-                Usuario user = new Usuario()
-                {
-                    User = User,
-                    Password = Password,
-                };
-                LoginIn(user);
+                GetIn();
             });
 
             Register = new Command(() => { RegisterNewUser(); });
@@ -116,24 +111,26 @@ namespace RegistroDocente.ViewModels
         #region Methods
         private async void LoginIn(Usuario user)
         {
-            using (DataAccess db = new DataAccess())
+            using (DataAccess db1 = new DataAccess())
             {
                 try
                 {
-                    if (db.TryUsuario(user.User, user.Password))
+                    if (db1.TryUsuario(user.User, user.Password))
                     {
+                        Usuario theUser = db1.GetUsuarioXUser(user.User);
+                        theUser.Defecto = user.Defecto;
+                        db1.UpdateUsuario(theUser);
                         await Application.Current.MainPage.Navigation.PushModalAsync(new HomePage());
                     }
                     else
                     {
-
+                        OpenAlert("Error", "Ingreso incorrecto", "Aceptar");
                     }
                 }
-                catch (Exception)
+                catch (Exception ex)
                 {
-                    throw;
+                    OpenAlert("Error",ex.Message, "Aceptar");
                 }
-
             }
         }
 
@@ -142,14 +139,50 @@ namespace RegistroDocente.ViewModels
             await Application.Current.MainPage.Navigation.PushModalAsync(new PersonaUsuarioPage());
         }
 
-        private async void openAlert(string title, string message, string button)
+        public void GetIn()
+        {
+            using (DataAccess db = new DataAccess())
+            {
+                if (db.GetUsuariosDefault())
+                {
+                    LoginIn(db.GetUsuarioDefault());
+                }
+                else
+                {
+                    Usuario user = new Usuario()
+                    {
+                        User = User,
+                        Password = Password,
+                        Defecto = Defecto,
+                    };
+                    LoginIn(user);
+                }
+            }
+        }
+
+        private async void OpenAlert(string title, string message, string button)
         {
             await Application.Current.MainPage.DisplayAlert(title, message, button);
         }
 
-        private async void goBack()
+        private async void GoBack()
         {
             await Application.Current.MainPage.Navigation.PopModalAsync();
+        }
+
+        public bool DefaultUserExist()
+        {
+            using(DataAccess db = new DataAccess())
+            {
+                if (db.GetUsuariosDefault())
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
         }
         #endregion
     }

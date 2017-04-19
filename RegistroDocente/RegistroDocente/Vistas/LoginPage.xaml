@@ -21,7 +21,7 @@
                 <StackLayout Orientation="Horizontal" Spacing="10">
                     <Label Text="Recordarme"
                             VerticalOptions="EndAndExpand"/>
-                    <Switch IsEnabled="{Binding Default, Mode=TwoWay}"
+                    <Switch IsToggled="{Binding Defecto}"
                             VerticalOptions="End" />
                 </StackLayout>
                 <Button Command="{Binding Login}" 
