@@ -5,6 +5,9 @@
              x:Class="RegistroDocente.Vistas.HomePage"
              Title="Menú principal">
     <!--Pages can be added as references or inline-->
+    <TabbedPage.ToolbarItems>
+        <ToolbarItem Name="Salir" Activated="Salir_Activated" Order="Primary" Priority="0" />
+    </TabbedPage.ToolbarItems>
     <ContentPage Title="Matrícula">
         <StackLayout>
             <Label Text="Matrícula"  HorizontalTextAlignment="Center" HorizontalOptions="FillAndExpand" Margin="5" />

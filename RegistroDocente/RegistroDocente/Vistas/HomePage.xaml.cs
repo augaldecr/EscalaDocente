@@ -22,5 +22,9 @@ namespace RegistroDocente.Vistas
             return false;
         }
 
+        private void Salir_Activated(object sender, EventArgs e)
+        {
+
+        }
     }
 }

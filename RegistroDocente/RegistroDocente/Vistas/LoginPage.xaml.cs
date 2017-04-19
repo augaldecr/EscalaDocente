@@ -22,6 +22,7 @@ namespace RegistroDocente.Vistas
             {
                 user.GetIn();
             }
+
         }
     }
 }
