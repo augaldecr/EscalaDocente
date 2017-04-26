@@ -260,23 +260,12 @@ namespace RegistroDocente.Controlador
         {
             try
             {
-                foreach (var item in connection.Table<Usuario>().OrderBy(x => x.ID).ToList())
-                {
-                    if (item.Defecto)
-                    {
-                        return item;
-                    }
-                    else
-                    {
-                        return null;
-                    }
-                }
+                return connection.Table<Usuario>().FirstOrDefault(u => u.Defecto);
             }
             catch (Exception ex)
             {
                 throw new Exception(ex.Message);
             }
-            return null;
         }
 
         public List<Usuario> GetUsuarios()

@@ -2,6 +2,7 @@
 using RegistroDocente.Models;
 using RegistroDocente.Vistas;
 using System;
+using System.Collections.ObjectModel;
 using System.Windows.Input;
 using Xamarin.Forms;
 
@@ -15,6 +16,7 @@ namespace RegistroDocente.ViewModels
         public ICommand Delete { get; private set; }
         public ICommand New { get; private set; }
         public ICommand NewUserPerson { get; private set; }
+        public ObservableCollection<Persona> ListadoPersonas;
         #endregion
 
         #region Constructor
@@ -153,6 +155,24 @@ namespace RegistroDocente.ViewModels
         }
         #endregion
 
+        #region Properties
+        public ObservableCollection<Persona> listadoPersonas
+        {
+            get
+            {
+                if (ListadoPersonas == null)
+                {
+                    llenarListadoPersonas();
+                }
+                return ListadoPersonas;
+            }
+            set
+            {
+                ListadoPersonas = value;
+            }
+        }
+        #endregion
+
         #region Methods
         private async void openUsuarioPage(string ced)
         {
@@ -162,6 +182,15 @@ namespace RegistroDocente.ViewModels
         private async void openAlert(string title, string message, string button)
         {
             await Application.Current.MainPage.DisplayAlert(title, message, button);
+        }
+
+        public void llenarListadoPersonas()
+        {
+            using (DataAccess db = new DataAccess())
+            {
+                ObservableCollection<Persona> personas = new ObservableCollection<Persona>(db.GetPersonas());
+                ListadoPersonas = personas;
+            }
         }
         #endregion
     }

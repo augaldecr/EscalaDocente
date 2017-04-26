@@ -102,6 +102,9 @@
     <Compile Include="Vistas\PeriodosPage.xaml.cs">
       <DependentUpon>PeriodosPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Vistas\PersonasPage.xaml.cs">
+      <DependentUpon>PersonasPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Vistas\PersonaUsuarioPage.xaml.cs">
       <DependentUpon>PersonaUsuarioPage.xaml</DependentUpon>
     </Compile>
@@ -188,6 +191,12 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Vistas\PersonaUsuarioPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Vistas\PersonasPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>

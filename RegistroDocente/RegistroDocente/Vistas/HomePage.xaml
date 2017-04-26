@@ -39,7 +39,10 @@
         <TableView Intent="Settings">
         <TableRoot>
             <TableSection Title="Ajustes">
-                <TextCell Text="Períodos"
+                    <TextCell Text="Personas"
+                          TextColor="Blue" 
+                          Command="{Binding Personas}"></TextCell>
+                    <TextCell Text="Períodos"
                           TextColor="Blue" 
                           Command="{Binding Periodos}"></TextCell>
                 <TextCell Text="Instituciones"

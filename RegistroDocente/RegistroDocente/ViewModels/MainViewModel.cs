@@ -7,6 +7,7 @@ namespace RegistroDocente.ViewModels
     public class MainViewModel
     {
         #region Attributtes
+        public ICommand Personas { get; set; }
         public ICommand Periodos { get; set; }
         public ICommand Instituciones { get; set; }
         public ICommand Asignaturas { get; set; }
@@ -19,6 +20,9 @@ namespace RegistroDocente.ViewModels
         #region Constructors
         public MainViewModel()
         {
+            Personas = new Command(() => {
+                PersonasCommand();
+            });
             Periodos = new Command(() => {
                 PeriodosCommand();
             });
@@ -44,6 +48,11 @@ namespace RegistroDocente.ViewModels
         #endregion
 
         #region Commands
+        private async void PersonasCommand()
+        {
+            await Application.Current.MainPage.Navigation.PushModalAsync(new PersonasPage());
+        }
+
         private async void PeriodosCommand()
         {
             await Application.Current.MainPage.Navigation.PushModalAsync(new PeriodosPage());
