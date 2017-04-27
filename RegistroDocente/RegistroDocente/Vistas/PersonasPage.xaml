@@ -9,10 +9,11 @@
     </ContentPage.BindingContext>
     <StackLayout>
         <ListView HasUnevenRows="True"
-                  ItemsSource="{Binding ListadoPersonas}">
+                  ItemsSource="{Binding listadoPersonas}"
+                  x:Name="PersonasList">
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <TextCell Text="Nombre" />
+                    <TextCell Text="{Binding Cedula}" Detail="{Binding NombreCompleto}" />
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
