@@ -20,6 +20,68 @@ namespace RegistroDocente.Controlador
             CreaTablas(connection);
         }
 
+        #region Asignatura
+        public void InsertAsignatura(Asignatura obj)
+        {
+            try
+            {
+                connection.Insert(obj);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public void UpdateAsignatura(Asignatura obj)
+        {
+            try
+            {
+                connection.Update(obj);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public void DeleteAsignatura(Asignatura obj)
+        {
+            try
+            {
+                connection.Delete(obj);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public Asignatura GetAsignatura(int id)
+        {
+            try
+            {
+                return connection.Table<Asignatura>().FirstOrDefault(x => x.ID == id);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public List<Asignatura> GetAsignatura()
+        {
+            try
+            {
+                return connection.Table<Asignatura>().OrderBy(x => x.Nombre).ToList();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+        #endregion
+
         #region Periodo
         public void InsertPeriodo(Periodo obj)
         {
@@ -291,9 +353,9 @@ namespace RegistroDocente.Controlador
             con.CreateTable<Persona>();
             con.CreateTable<Usuario>();
             /*con.CreateTable<AdecuacionCurricular>();
-            con.CreateTable<Anho>();
+            con.CreateTable<Anho>();*/
             con.CreateTable<Asignatura>();
-            con.CreateTable<CalificacionXIndicadores>();
+            /*con.CreateTable<CalificacionXIndicadores>();
             con.CreateTable<Canton>();
             con.CreateTable<CategoriaDocente>();
             con.CreateTable<CicloEducativo>();

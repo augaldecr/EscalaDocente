@@ -149,15 +149,13 @@ namespace RegistroDocente.ViewModels
                 }
                 else
                 {
-                    /*Usuario user = new Usuario()
+                    Usuario user = new Usuario()
                     {
                         User = User,
                         Password = Password,
                         Defecto = Defecto,
                     };
-                    LoginIn(user);*/
-                    OpenAlert("Error", "Ingreso incorrecto", "Aceptar");
-                    return;
+                    LoginIn(user);
                 }
             }
         }

@@ -10,6 +10,7 @@
     <StackLayout>
         <ListView HasUnevenRows="True"
                   ItemsSource="{Binding listadoPersonas}"
+                  ItemSelected="{Binding }"
                   x:Name="PersonasList">
             <ListView.ItemTemplate>
                 <DataTemplate>
