@@ -17,7 +17,8 @@ namespace RegistroDocente.ViewModels
         public ICommand New { get; private set; }
         public ICommand NewUserPerson { get; private set; }
         public ObservableCollection<Persona> ListadoPersonas;
-        public ICommand EditPersona { get; private set; }
+        public ICommand EditPerson { get; private set; }
+        Persona SelectedPerson;
         #endregion
 
         #region Constructor
@@ -154,9 +155,9 @@ namespace RegistroDocente.ViewModels
                 }
             });
 
-            EditPersona = new Command(() =>
+            EditPerson = new Command(() =>
             {
-                OpenEditPersona();
+                openAlert("Prueba", "Puta madre", "Aceptar");
             });
         }
         #endregion
@@ -177,17 +178,28 @@ namespace RegistroDocente.ViewModels
                 ListadoPersonas = value;
             }
         }
+
+        public Persona selectedPerson
+        {
+            get
+            {
+                return SelectedPerson;
+            }
+            set
+            {
+                if (SelectedPerson != value)
+                {
+                    SelectedPerson = value;
+                    OnPropertyChanged("SelectedPerson");
+                }
+            }
+        }
         #endregion
 
         #region Methods
         private async void openUsuarioPage(string ced)
         {
             await Application.Current.MainPage.Navigation.PushModalAsync(new UsuarioPage(ced));
-        }
-
-        private async void OpenEditPersona()
-        {
-            await Application.Current.MainPage.Navigation.PushModalAsync(new PersonaPage());
         }
 
         private async void openAlert(string title, string message, string button)
