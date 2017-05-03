@@ -9,8 +9,9 @@
         <vm:PersonaViewModel />
     </ContentPage.BindingContext>
     <TableView Intent="Form">
-        <TableRoot>
-            <TableSection Title="Registro de nuevo usuario">
+        <TableRoot x:Name="Tabla">
+            <TableSection Title="Registro de nuevo usuario" >
+                <TextCell Text="{Binding ID, Mode=OneWay}" />
                 <EntryCell Keyboard="Text"
                            Placeholder="Ingrese su cédula"
                            Text="{Binding Cedula, Mode=TwoWay}" />
@@ -43,7 +44,12 @@
                     <StackLayout Orientation="Horizontal">
                         <Button Command="{Binding Insert}"
                                 HorizontalOptions="CenterAndExpand"
-                                Text="Guardar" />
+                                Text="Guardar" 
+                                x:Name="btnGuardar" />
+                        <Button Command="{Binding Update}"
+                                HorizontalOptions="CenterAndExpand"
+                                Text="Actualizar"
+                                x:Name="btnActualizar" />
                         <Button Command="{Binding New}"
                                 HorizontalOptions="CenterAndExpand"
                                 Text="Reiniciar" />

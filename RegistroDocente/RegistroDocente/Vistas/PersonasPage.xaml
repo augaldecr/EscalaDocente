@@ -8,9 +8,8 @@
         <vm:PersonaViewModel />
     </ContentPage.BindingContext>
     <StackLayout>
-        <ListView HasUnevenRows="True"
-                  ItemsSource="{Binding listadoPersonas}"
-                  x:Name="PersonasList">
+        <ListView ItemsSource="{Binding listadoPersonas}"
+                  SelectedItem="{Binding selectedPerson}" >
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <TextCell Text="{Binding Cedula}" Detail="{Binding NombreCompleto}" />

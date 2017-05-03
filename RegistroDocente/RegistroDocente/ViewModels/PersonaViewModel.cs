@@ -17,8 +17,7 @@ namespace RegistroDocente.ViewModels
         public ICommand New { get; private set; }
         public ICommand NewUserPerson { get; private set; }
         public ObservableCollection<Persona> ListadoPersonas;
-        public ICommand EditPerson { get; private set; }
-        Persona SelectedPerson;
+        private Persona SelectedPerson;
         #endregion
 
         #region Constructor
@@ -50,6 +49,7 @@ namespace RegistroDocente.ViewModels
                         Application.Current.MainPage.DisplayAlert("Error", ex.Message, "Aceptar");
                     }
                 }
+                Application.Current.MainPage.Navigation.PopModalAsync();
             });
 
             Update = new Command(() =>
@@ -79,6 +79,7 @@ namespace RegistroDocente.ViewModels
                         Application.Current.MainPage.DisplayAlert("Error", ex.Message, "Aceptar");
                     }
                 }
+                Application.Current.MainPage.Navigation.PopModalAsync();
             });
 
             Delete = new Command(() =>
@@ -108,6 +109,7 @@ namespace RegistroDocente.ViewModels
                         Application.Current.MainPage.DisplayAlert("Error", ex.Message, "Aceptar");
                     }
                 }
+                Application.Current.MainPage.Navigation.PopModalAsync();
             });
 
             New = new Command(() =>
@@ -154,11 +156,6 @@ namespace RegistroDocente.ViewModels
                     }
                 }
             });
-
-            EditPerson = new Command(() =>
-            {
-                openAlert("Prueba", "Puta madre", "Aceptar");
-            });
         }
         #endregion
 
@@ -191,12 +188,20 @@ namespace RegistroDocente.ViewModels
                 {
                     SelectedPerson = value;
                     OnPropertyChanged("SelectedPerson");
+
+                    editPersonaPage(SelectedPerson);
                 }
             }
         }
         #endregion
 
         #region Methods
+
+        private async void editPersonaPage(Persona person)
+        {
+            await Application.Current.MainPage.Navigation.PushModalAsync(new PersonaPage(person));
+        }
+
         private async void openUsuarioPage(string ced)
         {
             await Application.Current.MainPage.Navigation.PushModalAsync(new UsuarioPage(ced));

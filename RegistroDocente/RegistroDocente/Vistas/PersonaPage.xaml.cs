@@ -1,4 +1,6 @@
-﻿using Xamarin.Forms;
+﻿using RegistroDocente.Models;
+using RegistroDocente.ViewModels;
+using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 namespace RegistroDocente.Vistas
@@ -9,6 +11,12 @@ namespace RegistroDocente.Vistas
         public PersonaPage()
         {
             InitializeComponent();
+        }
+
+        public PersonaPage(Persona person)
+        {
+            InitializeComponent();
+            BindingContext = person;
         }
     }
 }
