@@ -5,9 +5,6 @@
              x:Class="RegistroDocente.Vistas.HomePage"
              Title="Menú principal">
     <!--Pages can be added as references or inline-->
-    <TabbedPage.ToolbarItems>
-        <ToolbarItem Name="Salir" Activated="Salir_Activated" Order="Primary" Priority="0" />
-    </TabbedPage.ToolbarItems>
     <ContentPage Title="Matrícula">
         <StackLayout>
             <Label Text="Matrícula"  HorizontalTextAlignment="Center" HorizontalOptions="FillAndExpand" Margin="5" />
@@ -39,10 +36,13 @@
         <TableView Intent="Settings">
         <TableRoot>
             <TableSection Title="Ajustes">
-                    <TextCell Text="Personas"
+                <TextCell Text="Catálogo de clases"
+                          TextColor="Blue" 
+                          Command="{Binding CyM}"></TextCell>
+                <TextCell Text="Personas"
                           TextColor="Blue" 
                           Command="{Binding Personas}"></TextCell>
-                    <TextCell Text="Períodos"
+                <TextCell Text="Períodos"
                           TextColor="Blue" 
                           Command="{Binding Periodos}"></TextCell>
                 <TextCell Text="Instituciones"

@@ -82,6 +82,68 @@ namespace RegistroDocente.Controlador
         }
         #endregion
 
+        #region Anho
+        public void InsertAnho(Anho obj)
+        {
+            try
+            {
+                connection.Insert(obj);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public void UpdateAnho(Anho obj)
+        {
+            try
+            {
+                connection.Update(obj);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public void DeleteAnho(Anho obj)
+        {
+            try
+            {
+                connection.Delete(obj);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public Anho GetAnho(int id)
+        {
+            try
+            {
+                return connection.Table<Anho>().FirstOrDefault(x => x.ID == id);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public List<Anho> GetAnhos()
+        {
+            try
+            {
+                return connection.Table<Anho>().OrderBy(x => x.Nombre).ToList();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+        #endregion
+
         #region Periodo
         public void InsertPeriodo(Periodo obj)
         {
@@ -352,8 +414,8 @@ namespace RegistroDocente.Controlador
         {
             con.CreateTable<Persona>();
             con.CreateTable<Usuario>();
-            /*con.CreateTable<AdecuacionCurricular>();
-            con.CreateTable<Anho>();*/
+            /*con.CreateTable<AdecuacionCurricular>();*/
+            con.CreateTable<Anho>();
             con.CreateTable<Asignatura>();
             /*con.CreateTable<CalificacionXIndicadores>();
             con.CreateTable<Canton>();

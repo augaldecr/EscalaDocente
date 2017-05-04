@@ -11,6 +11,8 @@ namespace RegistroDocente.Vistas
         public PersonaPage()
         {
             InitializeComponent();
+            btnActualizar.IsVisible = false;
+            btnDelete.IsVisible = false;
         }
 
         public PersonaPage(Persona person)
@@ -31,6 +33,8 @@ namespace RegistroDocente.Vistas
             };
             #endregion
             InitializeComponent();
+            btnGuardar.IsVisible = false;
+            btnNew.IsVisible = false;
             BindingContext = p;
         }
     }

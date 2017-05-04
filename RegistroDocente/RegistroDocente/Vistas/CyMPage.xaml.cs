@@ -10,16 +10,11 @@ using Xamarin.Forms.Xaml;
 namespace RegistroDocente.Vistas
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class HomePage : TabbedPage
+    public partial class CyMPage : ContentPage
     {
-        public HomePage()
+        public CyMPage()
         {
             InitializeComponent();
-        }
-
-        protected override bool OnBackButtonPressed()
-        {
-            return false;
         }
     }
 }

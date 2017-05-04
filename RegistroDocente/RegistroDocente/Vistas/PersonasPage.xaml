@@ -4,6 +4,9 @@
                   xmlns:vm="clr-namespace:RegistroDocente.ViewModels"
                   x:Class="RegistroDocente.Vistas.PersonasPage"
                   Title="Personas">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Order="Default" Priority="0" Text="Nuevo" ></ToolbarItem>
+    </ContentPage.ToolbarItems>
     <ContentPage.BindingContext>
         <vm:PersonaViewModel />
     </ContentPage.BindingContext>
@@ -16,5 +19,6 @@
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
+        <Button Command="{Binding NewPersona}" Text="Nuevo" />
     </StackLayout>
 </ContentPage>

@@ -15,6 +15,8 @@ namespace RegistroDocente.ViewModels
         public ICommand Update { get; private set; }
         public ICommand Delete { get; private set; }
         public ICommand New { get; private set; }
+        public ICommand NewPersona { get; private set; }
+        public ICommand Cancel { get; private set; }
         public ICommand NewUserPerson { get; private set; }
         private ObservableCollection<Persona> ListadoPersonas;
         private Persona SelectedPerson;
@@ -98,17 +100,25 @@ namespace RegistroDocente.ViewModels
                     Telefono = Telefono
                 };
 
-                using (DataAccess db = new DataAccess())
+                if (ID>1)
                 {
-                    try
+                    using (DataAccess db = new DataAccess())
                     {
-                        db.DeletePersona(p);
-                    }
-                    catch (Exception ex)
-                    {
-                        Application.Current.MainPage.DisplayAlert("Error", ex.Message, "Aceptar");
+                        try
+                        {
+                            db.DeletePersona(p);
+                        }
+                        catch (Exception ex)
+                        {
+                            Application.Current.MainPage.DisplayAlert("Error", ex.Message, "Aceptar");
+                        }
                     }
                 }
+                else
+                {
+                    openAlert("Advertencia", "No se puede eliminar al usuario principal", "Aceptar");
+                }
+
                 Application.Current.MainPage.Navigation.PopModalAsync();
             });
 
@@ -126,6 +136,16 @@ namespace RegistroDocente.ViewModels
                     Celular = string.Empty,
                     Telefono = string.Empty
                 };
+            });
+
+            NewPersona = new Command(() =>
+            {
+                openNewPersonaPage();
+            });
+
+            Cancel = new Command(() =>
+            {
+                Application.Current.MainPage.Navigation.PopModalAsync();
             });
 
             NewUserPerson = new Command(() =>
@@ -205,6 +225,11 @@ namespace RegistroDocente.ViewModels
         private async void openUsuarioPage(string ced)
         {
             await Application.Current.MainPage.Navigation.PushModalAsync(new UsuarioPage(ced));
+        }
+
+        private async void openNewPersonaPage()
+        {
+            await Application.Current.MainPage.Navigation.PushModalAsync(new PersonaPage());
         }
 
         private async void openAlert(string title, string message, string button)
