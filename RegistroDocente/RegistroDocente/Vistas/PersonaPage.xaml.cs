@@ -15,8 +15,23 @@ namespace RegistroDocente.Vistas
 
         public PersonaPage(Persona person)
         {
+            #region Persona2PersonaViewModel
+            PersonaViewModel p = new PersonaViewModel()
+            {
+                ID = person.ID,
+                Cedula = person.Cedula,
+                Nombre = person.Nombre,
+                Apellido1 = person.Apellido1,
+                Apellido2 = person.Apellido2,
+                FechaNacimiento = person.FechaNacimiento,
+                Genero = person.Genero,
+                Email = person.Email,
+                Celular = person.Celular,
+                Telefono = person.Telefono,
+            };
+            #endregion
             InitializeComponent();
-            BindingContext = person;
+            BindingContext = p;
         }
     }
 }

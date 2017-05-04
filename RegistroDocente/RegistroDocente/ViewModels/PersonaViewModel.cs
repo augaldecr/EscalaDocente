@@ -16,7 +16,7 @@ namespace RegistroDocente.ViewModels
         public ICommand Delete { get; private set; }
         public ICommand New { get; private set; }
         public ICommand NewUserPerson { get; private set; }
-        public ObservableCollection<Persona> ListadoPersonas;
+        private ObservableCollection<Persona> ListadoPersonas;
         private Persona SelectedPerson;
         #endregion
 
