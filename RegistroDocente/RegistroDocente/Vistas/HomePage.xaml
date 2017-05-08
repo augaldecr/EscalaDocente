@@ -5,18 +5,22 @@
              x:Class="RegistroDocente.Vistas.HomePage"
              Title="Menú principal">
     <!--Pages can be added as references or inline-->
+    <ContentPage Title="Información principal">
+        <StackLayout>
+            <Label Text="Seleccione el código de su institución"  HorizontalTextAlignment="Center" HorizontalOptions="FillAndExpand" Margin="5" />
+            <StackLayout Orientation="Horizontal">
+                <Entry Placeholder="Código presupuestario" />
+                <Button Text="Buscar" />
+            </StackLayout>
+        </StackLayout>
+    </ContentPage>
     <ContentPage Title="Matrícula">
         <StackLayout>
             <Label Text="Matrícula"  HorizontalTextAlignment="Center" HorizontalOptions="FillAndExpand" Margin="5" />
             <BoxView Color="Green" VerticalOptions="FillAndExpand" />
         </StackLayout>
     </ContentPage>
-    <ContentPage Title="Asistencia">
-        <StackLayout>
-            <Label Text="Asistencia"  HorizontalTextAlignment="Center" HorizontalOptions="FillAndExpand" Margin="5" />
-            <BoxView Color="Green" VerticalOptions="FillAndExpand" />
-        </StackLayout>
-    </ContentPage>
+
     <ContentPage Title="Evaluaciones">
         <StackLayout>
             <Label Text="Evaluaciones" HorizontalTextAlignment="Center" HorizontalOptions="FillAndExpand" Margin="5"  />
@@ -36,7 +40,7 @@
         <TableView Intent="Settings">
         <TableRoot>
             <TableSection Title="Ajustes">
-                <TextCell Text="Catálogo de clases"
+                <TextCell Text="Catálogo Y Mantenimientos"
                           TextColor="Blue" 
                           Command="{Binding CyM}"></TextCell>
                 <TextCell Text="Personas"
