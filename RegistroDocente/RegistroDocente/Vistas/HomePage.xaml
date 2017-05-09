@@ -5,28 +5,49 @@
              x:Class="RegistroDocente.Vistas.HomePage"
              Title="Menú principal">
     <!--Pages can be added as references or inline-->
-    <ContentPage Title="Matrícula">
+    <ContentPage Title="Institución">
         <StackLayout>
-            <Label Text="Matrícula"  HorizontalTextAlignment="Center" HorizontalOptions="FillAndExpand" Margin="5" />
-            <BoxView Color="Green" VerticalOptions="FillAndExpand" />
+            <Label Text="Datos institucionales"  HorizontalTextAlignment="Center" HorizontalOptions="FillAndExpand" Margin="5" />
+            <StackLayout Orientation="Horizontal">
+                <Entry HorizontalOptions="CenterAndExpand"
+                       HorizontalTextAlignment="Center"
+                       Placeholder="Código institucional" />
+                <Button HorizontalOptions="CenterAndExpand"
+                        Text="Buscar" />
+            </StackLayout>
+            <StackLayout Padding="8">
+            <Entry Placeholder="Nombre de la institución"/>
+            <Entry Placeholder="Nombre de director(a)"/>
+            <Picker>
+                <Picker.Items>
+                    
+                </Picker.Items>
+            </Picker>
+            </StackLayout>
         </StackLayout>
     </ContentPage>
-    <ContentPage Title="Asistencia">
+    <ContentPage Title="Matrícula"
+                 Padding="8">
+        <ContentPage.BindingContext>
+            <vm:PersonaViewModel />
+        </ContentPage.BindingContext>
         <StackLayout>
-            <Label Text="Asistencia"  HorizontalTextAlignment="Center" HorizontalOptions="FillAndExpand" Margin="5" />
-            <BoxView Color="Green" VerticalOptions="FillAndExpand" />
+            <ListView ItemsSource="{Binding listadoPersonas}"
+                  SelectedItem="{Binding selectedPerson}" >
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell Text="{Binding Cedula}" Detail="{Binding NombreCompleto}" />
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <Button Command="{Binding NewPersona}" Text="Nuevo" />
         </StackLayout>
     </ContentPage>
-    <ContentPage Title="Evaluaciones">
+    <ContentPage Title="Evaluaciones"
+                 Padding="8">
         <StackLayout>
             <Label Text="Evaluaciones" HorizontalTextAlignment="Center" HorizontalOptions="FillAndExpand" Margin="5"  />
             <BoxView Color="Blue" VerticalOptions="FillAndExpand" />
-        </StackLayout>
-    </ContentPage>
-    <ContentPage Title="Planeamientos">
-        <StackLayout>
-            <Label Text="Planeamientos"  HorizontalTextAlignment="Center" HorizontalOptions="FillAndExpand" Margin="5" />
-            <BoxView Color="Green" VerticalOptions="FillAndExpand" />
         </StackLayout>
     </ContentPage>
     <ContentPage Title="Ajustes">
