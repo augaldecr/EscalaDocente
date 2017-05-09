@@ -2,13 +2,13 @@
 using System.ComponentModel;
 
 namespace RegistroDocente.Models
-{ 
-    //Referente al nivel escolar (Primaria, Secundaria)
-    public class NivelEscolar : INotifyPropertyChanged
+{
+    public class MatriculaAsignatura : INotifyPropertyChanged
     {
         #region Attributes
         private int iD;
-        private string nombre;
+        private int matricula;
+        private int asignatura;
         #endregion
 
         #region Properties
@@ -26,18 +26,34 @@ namespace RegistroDocente.Models
             }
         }
         [NotNull]
-        public string Nombre
+        public int Matricula
         {
             get
             {
-                return nombre;
+                return matricula;
             }
             set
             {
-                if (nombre != value)
+                if (matricula != value)
                 {
-                    nombre = value;
-                    OnPropertyChanged("nombre");
+                    matricula = value;
+                    OnPropertyChanged("matricula");
+                }
+            }
+        }
+        [NotNull]
+        public int Asignatura
+        {
+            get
+            {
+                return asignatura;
+            }
+            set
+            {
+                if (asignatura != value)
+                {
+                    asignatura = value;
+                    OnPropertyChanged("asignatura");
                 }
             }
         }

@@ -10,6 +10,7 @@ namespace RegistroDocente.Models
         #region Attributes
         private int iD;
         private string nombre;
+        //Linkea a curso lectivo
         private int cursoLectivo;
         private DateTime fechaInicio;
         private DateTime fechaFin;

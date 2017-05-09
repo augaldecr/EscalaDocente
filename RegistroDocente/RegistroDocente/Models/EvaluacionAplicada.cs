@@ -1,17 +1,17 @@
 ﻿using SQLite.Net.Attributes;
-using System;
 using System.ComponentModel;
 
 namespace RegistroDocente.Models
 {
-    public class InAsistencia : INotifyPropertyChanged
+    public class EvaluacionAplicada : INotifyPropertyChanged
     {
         #region Attributes
         private int iD;
+        private string evaluacion;
         private int matricula;
-        private DateTime fecha;
-        private int tipo;
-        private int cantidad;
+        private decimal puntajeObtenido;
+        private decimal calificacion;
+        private int observacion;
         #endregion
 
         #region Properties
@@ -25,6 +25,22 @@ namespace RegistroDocente.Models
                 {
                     iD = value;
                     OnPropertyChanged("iD");
+                }
+            }
+        }
+        [NotNull]
+        public string Evaluacion
+        {
+            get
+            {
+                return evaluacion;
+            }
+            set
+            {
+                if (evaluacion != value)
+                {
+                    evaluacion = value;
+                    OnPropertyChanged("evaluacion");
                 }
             }
         }
@@ -45,50 +61,50 @@ namespace RegistroDocente.Models
             }
         }
         [NotNull]
-        public DateTime Fecha
+        public decimal PuntajeObtenido
         {
             get
             {
-                return fecha;
+                return puntajeObtenido;
             }
             set
             {
-                if (fecha != value)
+                if (puntajeObtenido != value)
                 {
-                    fecha = value;
-                    OnPropertyChanged("fecha");
+                    puntajeObtenido = value;
+                    OnPropertyChanged("puntajeObtenido");
                 }
             }
         }
         [NotNull]
-        public int Tipo
+        public decimal Calificacion
         {
             get
             {
-                return tipo;
+                return calificacion;
             }
             set
             {
-                if (tipo != value)
+                if (calificacion != value)
                 {
-                    tipo = value;
-                    OnPropertyChanged("tipo");
+                    calificacion = value;
+                    OnPropertyChanged("calificacion");
                 }
             }
         }
-        [NotNull]
-        public int Cantidad
+        //Linkea con la observación, en caso de ser cotidiano
+        public int Observacion
         {
             get
             {
-                return cantidad;
+                return observacion;
             }
             set
             {
-                if (cantidad != value)
+                if (observacion != value)
                 {
-                    cantidad = value;
-                    OnPropertyChanged("cantidad");
+                    observacion = value;
+                    OnPropertyChanged("observacion");
                 }
             }
         }

@@ -1,37 +1,36 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:vm="clr-namespace:RegistroDocente.ViewModels"
-             x:Class="RegistroDocente.Vistas.HomePage"
-             Title="Menú principal">
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            xmlns:vm="clr-namespace:RegistroDocente.ViewModels"
+            xmlns:controls="clr-namespace:RegistroDocente.Utils"
+            x:Class="RegistroDocente.Vistas.HomePage"
+            Title="Menú principal">
     <!--Pages can be added as references or inline-->
-    <ContentPage Title="Institución">
+    <ContentPage Title="Secciones">
+        <ContentPage.BindingContext>
+            <vm:PersonaViewModel />
+        </ContentPage.BindingContext>
         <StackLayout>
-            <Label Text="Datos institucionales"  HorizontalTextAlignment="Center" HorizontalOptions="FillAndExpand" Margin="5" />
-            <StackLayout Orientation="Horizontal">
-                <Entry HorizontalOptions="CenterAndExpand"
-                       HorizontalTextAlignment="Center"
-                       Placeholder="Código institucional" />
-                <Button HorizontalOptions="CenterAndExpand"
-                        Text="Buscar" />
-            </StackLayout>
-            <StackLayout Padding="8">
-            <Entry Placeholder="Nombre de la institución"/>
-            <Entry Placeholder="Nombre de director(a)"/>
-            <Picker>
-                <Picker.Items>
-                    
-                </Picker.Items>
-            </Picker>
-            </StackLayout>
+            <ListView ItemsSource="{Binding listadoPersonas}"
+                  SelectedItem="{Binding selectedPerson}" >
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell Text="{Binding Cedula}" Detail="{Binding NombreCompleto}" />
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <Button Command="{Binding NewPersona}" Text="Nuevo" />
         </StackLayout>
     </ContentPage>
-    <ContentPage Title="Matrícula"
+    <ContentPage Title="Estudiantes"
                  Padding="8">
         <ContentPage.BindingContext>
             <vm:PersonaViewModel />
         </ContentPage.BindingContext>
         <StackLayout>
+            <controls:BindablePicker 
+                
+                />
             <ListView ItemsSource="{Binding listadoPersonas}"
                   SelectedItem="{Binding selectedPerson}" >
                 <ListView.ItemTemplate>

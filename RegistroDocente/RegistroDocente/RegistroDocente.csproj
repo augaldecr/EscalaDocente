@@ -53,9 +53,13 @@
     <Compile Include="Models\CursoLectivo.cs" />
     <Compile Include="Models\Dia.cs" />
     <Compile Include="Models\Distrito.cs" />
+    <Compile Include="Models\Escala.cs" />
+    <Compile Include="Models\EscalaNodo.cs" />
     <Compile Include="Models\Especialidad.cs" />
     <Compile Include="Models\Evaluacion.cs" />
+    <Compile Include="Models\EvaluacionAplicada.cs" />
     <Compile Include="Models\EvaluacionCualitativa.cs" />
+    <Compile Include="Models\EvaluacionNombrePropuesto.cs" />
     <Compile Include="Models\FechasNoLectivas.cs" />
     <Compile Include="Models\Funcionario.cs" />
     <Compile Include="Models\Genero.cs" />
@@ -66,9 +70,11 @@
     <Compile Include="Models\Indicadores.cs" />
     <Compile Include="Models\Institucion.cs" />
     <Compile Include="Models\Matricula.cs" />
+    <Compile Include="Models\MatriculaAsignatura.cs" />
     <Compile Include="Models\ModalidadInstitucion.cs" />
     <Compile Include="Models\Nivel.cs" />
     <Compile Include="Models\NivelEscolar.cs" />
+    <Compile Include="Models\Observacion.cs" />
     <Compile Include="Models\Pais.cs" />
     <Compile Include="Models\PaseDeLista.cs" />
     <Compile Include="Models\Periodo.cs" />
@@ -79,6 +85,7 @@
     <Compile Include="Models\Regional.cs" />
     <Compile Include="Models\RubricasEvaluacion.cs" />
     <Compile Include="Models\Seccion.cs" />
+    <Compile Include="Models\TipoAdecuacion.cs" />
     <Compile Include="Models\TipoAsignatura.cs" />
     <Compile Include="Models\TipoEvaluacion.cs" />
     <Compile Include="Models\TipoInAsistencia.cs" />
@@ -89,6 +96,7 @@
     <Compile Include="Controlador\DataAccess.cs" />
     <Compile Include="IConfig.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utils\BindablePicker.cs" />
     <Compile Include="Utils\Utils.cs" />
     <Compile Include="ViewModels\AnhoViewModel.cs" />
     <Compile Include="ViewModels\AsignaturaViewModel.cs" />
@@ -123,6 +131,9 @@
     </Compile>
     <Compile Include="Vistas\PersonaPage.xaml.cs">
       <DependentUpon>PersonaPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\SeccionPage.xaml.cs">
+      <DependentUpon>SeccionPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Vistas\UsuarioPage.xaml.cs">
       <DependentUpon>UsuarioPage.xaml</DependentUpon>
@@ -228,6 +239,12 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Vistas\CyMPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Vistas\SeccionPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>

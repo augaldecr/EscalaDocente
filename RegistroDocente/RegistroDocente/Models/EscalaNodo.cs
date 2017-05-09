@@ -2,13 +2,14 @@
 using System.ComponentModel;
 
 namespace RegistroDocente.Models
-{ 
-    //Referente al nivel escolar (Primaria, Secundaria)
-    public class NivelEscolar : INotifyPropertyChanged
+{
+    public class EscalaNodo : INotifyPropertyChanged
     {
         #region Attributes
         private int iD;
         private string nombre;
+        private int escala;
+        private int valor;
         #endregion
 
         #region Properties
@@ -38,6 +39,38 @@ namespace RegistroDocente.Models
                 {
                     nombre = value;
                     OnPropertyChanged("nombre");
+                }
+            }
+        }
+        [NotNull]
+        public int Escala
+        {
+            get
+            {
+                return escala;
+            }
+            set
+            {
+                if (escala != value)
+                {
+                    escala = value;
+                    OnPropertyChanged("escala");
+                }
+            }
+        }
+        [NotNull]
+        public int Valor
+        {
+            get
+            {
+                return valor;
+            }
+            set
+            {
+                if (valor != value)
+                {
+                    valor = value;
+                    OnPropertyChanged("valor");
                 }
             }
         }

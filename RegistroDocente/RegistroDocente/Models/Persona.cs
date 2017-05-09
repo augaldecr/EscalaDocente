@@ -14,6 +14,7 @@ namespace RegistroDocente.Models
         private string apellido1;
         private string apellido2;
         private DateTime fechaNacimiento;
+        //Linkea a género
         private int genero;
         private string email;
         private string celular;

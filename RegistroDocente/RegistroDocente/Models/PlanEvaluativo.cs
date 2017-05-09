@@ -1,4 +1,5 @@
 ﻿using SQLite.Net.Attributes;
+using System.ComponentModel;
 
 namespace RegistroDocente.Models
 {

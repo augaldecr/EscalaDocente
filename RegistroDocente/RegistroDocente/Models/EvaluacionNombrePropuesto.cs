@@ -2,9 +2,8 @@
 using System.ComponentModel;
 
 namespace RegistroDocente.Models
-{ 
-    //Referente al nivel escolar (Primaria, Secundaria)
-    public class NivelEscolar : INotifyPropertyChanged
+{
+    public class EvaluacionNombrePropuesto : INotifyPropertyChanged
     {
         #region Attributes
         private int iD;
@@ -48,7 +47,6 @@ namespace RegistroDocente.Models
         #endregion
 
         #region Methods
-
         protected virtual void OnPropertyChanged(string propiedad)
         {
             if (PropertyChanged != null)

@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:RegistroDocente.Utils"
+             x:Class="RegistroDocente.Vistas.SeccionPage">
+    <StackLayout>
+        <Label Text="Datos institucionales"  HorizontalTextAlignment="Center" HorizontalOptions="FillAndExpand" Margin="5" />
+        <StackLayout Orientation="Horizontal">
+            <Entry HorizontalOptions="CenterAndExpand"
+                       HorizontalTextAlignment="Center"
+                       Placeholder="Código institucional" />
+            <Button HorizontalOptions="CenterAndExpand"
+                        Text="Buscar" />
+        </StackLayout>
+        <StackLayout Padding="8">
+            <Entry Placeholder="Nombre de la institución"/>
+            <Entry Placeholder="Nombre de director(a)"/>
+
+        </StackLayout>
+    </StackLayout>
+</ContentPage>

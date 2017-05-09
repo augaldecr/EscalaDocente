@@ -2,9 +2,8 @@
 using System.ComponentModel;
 
 namespace RegistroDocente.Models
-{ 
-    //Referente al nivel escolar (Primaria, Secundaria)
-    public class NivelEscolar : INotifyPropertyChanged
+{
+    public class TipoAdecuacion : INotifyPropertyChanged
     {
         #region Attributes
         private int iD;
