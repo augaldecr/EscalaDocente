@@ -3,7 +3,7 @@ using System.ComponentModel;
 
 namespace RegistroDocente.Models
 {
-    public class TipoMatricula : INotifyPropertyChanged
+    public class TipoSalida : INotifyPropertyChanged
     {
         #region Attributes
         private int iD;
@@ -47,7 +47,6 @@ namespace RegistroDocente.Models
         #endregion
 
         #region Methods
-
         protected virtual void OnPropertyChanged(string propiedad)
         {
             if (PropertyChanged != null)

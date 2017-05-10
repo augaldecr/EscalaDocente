@@ -42,7 +42,7 @@
             <Button Command="{Binding NewPersona}" Text="Nuevo" />
         </StackLayout>
     </ContentPage>
-    <ContentPage Title="Evaluaciones"
+    <ContentPage Title="Escalas"
                  Padding="8">
         <StackLayout>
             <Label Text="Evaluaciones" HorizontalTextAlignment="Center" HorizontalOptions="FillAndExpand" Margin="5"  />

@@ -92,6 +92,7 @@
     <Compile Include="Models\TipoMatricula.cs" />
     <Compile Include="Models\TipoPeriodicidadAsignatura.cs" />
     <Compile Include="Models\TipoPeriodo.cs" />
+    <Compile Include="Models\TipoSalida.cs" />
     <Compile Include="Models\Usuario.cs" />
     <Compile Include="Controlador\DataAccess.cs" />
     <Compile Include="IConfig.cs" />
