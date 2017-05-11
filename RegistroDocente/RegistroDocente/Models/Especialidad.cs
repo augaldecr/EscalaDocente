@@ -3,7 +3,7 @@ using System.ComponentModel;
 
 namespace RegistroDocente.Models
 {
-    class Especialidad : INotifyPropertyChanged
+    public class Especialidad : INotifyPropertyChanged
     {
         #region Attributes
         private int iD;

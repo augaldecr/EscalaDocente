@@ -7,6 +7,7 @@ namespace RegistroDocente.Models
     {
         #region Attributes
         private int iD;
+        //Se refiera al acto de la observación, no a un texto
         private int observacion;
         private int indicador;
         private int matricula;

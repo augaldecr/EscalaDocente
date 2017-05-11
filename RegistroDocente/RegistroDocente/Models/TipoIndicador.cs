@@ -3,12 +3,12 @@ using System.ComponentModel;
 
 namespace RegistroDocente.Models
 {
-    public class Indicador : INotifyPropertyChanged
+    //Se refiere al nombre dado por el MEP al indicador de acuerdo a la asigntura ("Comportamiento esperado", etc)
+    public class TipoIndicador : INotifyPropertyChanged
     {
         #region Attributes
         private int iD;
         private string nombre;
-        private int objetivoGeneral;
         #endregion
 
         #region Properties
@@ -38,22 +38,6 @@ namespace RegistroDocente.Models
                 {
                     nombre = value;
                     OnPropertyChanged("nombre");
-                }
-            }
-        }
-        [NotNull]
-        public int ObjetivoGeneral
-        {
-            get
-            {
-                return objetivoGeneral;
-            }
-            set
-            {
-                if (objetivoGeneral != value)
-                {
-                    objetivoGeneral = value;
-                    OnPropertyChanged("objetivoGeneral");
                 }
             }
         }

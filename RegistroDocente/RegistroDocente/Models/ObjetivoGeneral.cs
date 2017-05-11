@@ -1,15 +1,17 @@
 ﻿using SQLite.Net.Attributes;
-using System;
 using System.ComponentModel;
 
 namespace RegistroDocente.Models
 {
-    public class FechasNoLectivas : INotifyPropertyChanged
+    public class ObjetivoGeneral : INotifyPropertyChanged
     {
         #region Attributes
         private int iD;
-        private string fecha;
-        private string motivo;
+        //El orden en el que se encuentran los objetivos en el programa de estudios
+        private int orden;
+        private string nombre;
+        private int nivel;
+        private int asignatura;
         #endregion
 
         #region Properties
@@ -27,34 +29,60 @@ namespace RegistroDocente.Models
             }
         }
         [NotNull]
-        public string Fecha
+        public int Orden
         {
-            get
-            {
-                return fecha;
-            }
+            get { return orden; }
             set
             {
-                if (fecha != value)
+                if (orden != value)
                 {
-                    fecha = value;
-                    OnPropertyChanged("fecha");
+                    orden = value;
+                    OnPropertyChanged("orden");
                 }
             }
         }
         [NotNull]
-        public string Motivo
+        public string Nombre
         {
             get
             {
-                return motivo;
+                return nombre;
             }
             set
             {
-                if (motivo != value)
+                if (nombre != value)
                 {
-                    motivo = value;
-                    OnPropertyChanged("motivo");
+                    nombre = value;
+                    OnPropertyChanged("nombre");
+                }
+            }
+        }
+        [NotNull]
+        public int Nivel
+        {
+            get { return nivel; }
+            set
+            {
+                if (nivel != value)
+                {
+                    nivel = value;
+                    OnPropertyChanged("nivel");
+                }
+            }
+        }
+        [NotNull]
+        public int Asignatura
+        {
+            get
+            {
+                return asignatura;
+            }
+            set
+            {
+                if (asignatura != value)
+                {
+                    asignatura = value;
+                    OnPropertyChanged("asignatura");
                 }
             }
         }
@@ -65,7 +93,6 @@ namespace RegistroDocente.Models
         #endregion
 
         #region Methods
-
         protected virtual void OnPropertyChanged(string propiedad)
         {
             if (PropertyChanged != null)

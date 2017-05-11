@@ -1,13 +1,15 @@
-﻿using SQLite.Net.Attributes;
+﻿using System;
+using SQLite.Net.Attributes;
 using System.ComponentModel;
 
 namespace RegistroDocente.Models
 {
-    public class Indicadores : INotifyPropertyChanged
+    public class DiaNoLectivo : INotifyPropertyChanged
     {
         #region Attributes
         private int iD;
-        private string nombre;
+        private int diaLectivo;
+        private string motivo;
         #endregion
 
         #region Properties
@@ -25,18 +27,34 @@ namespace RegistroDocente.Models
             }
         }
         [NotNull]
-        public string Nombre
+        public int DiaLectivo
         {
             get
             {
-                return nombre;
+                return diaLectivo;
             }
             set
             {
-                if (nombre != value)
+                if (diaLectivo != value)
                 {
-                    nombre = value;
-                    OnPropertyChanged("nombre");
+                    diaLectivo = value;
+                    OnPropertyChanged("diaLectivo");
+                }
+            }
+        }
+        [NotNull]
+        public string Motivo
+        {
+            get
+            {
+                return motivo;
+            }
+            set
+            {
+                if (motivo != value)
+                {
+                    motivo = value;
+                    OnPropertyChanged("motivo");
                 }
             }
         }
