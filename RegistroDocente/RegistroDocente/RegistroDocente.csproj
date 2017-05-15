@@ -103,6 +103,7 @@
     <Compile Include="Utils\Utils.cs" />
     <Compile Include="ViewModels\AnhoViewModel.cs" />
     <Compile Include="ViewModels\AsignaturaViewModel.cs" />
+    <Compile Include="ViewModels\CantonViewModel.cs" />
     <Compile Include="ViewModels\CatalogOfClassesViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
     <Compile Include="ViewModels\PeriodosViewModel.cs" />

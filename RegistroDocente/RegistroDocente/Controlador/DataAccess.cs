@@ -18,6 +18,10 @@ namespace RegistroDocente.Controlador
             connection = new SQLiteConnection(config.Plataforma,
                 Path.Combine(config.DirectorioDB, "RegistroDocente.db3"));
             CreaTablas(connection);
+            if ( GetConfiguracion(1).ID == 1)
+            {
+                InsertaDatosBasicos();
+            }
         }
 
         #region CRUDOfClasses
@@ -2548,17 +2552,387 @@ namespace RegistroDocente.Controlador
         }
         #endregion
 
-        //Puesto
-        //Regional
+        #region Puesto
+        public void InsertPuesto(Puesto obj)
+        {
+            try
+            {
+                connection.Insert(obj);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public void UpdatePuesto(Puesto obj)
+        {
+            try
+            {
+                connection.Update(obj);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public void DeletePuesto(Puesto obj)
+        {
+            try
+            {
+                connection.Delete(obj);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public Puesto GetPuesto(int id)
+        {
+            try
+            {
+                return connection.Table<Puesto>().FirstOrDefault(x => x.ID == id);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public List<Puesto> GetPuestos()
+        {
+            try
+            {
+                return connection.Table<Puesto>().OrderBy(x => x.ID).ToList();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+        #endregion
+
+        #region Regional
+        public void InsertRegional(Regional obj)
+        {
+            try
+            {
+                connection.Insert(obj);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public void UpdateRegional(Regional obj)
+        {
+            try
+            {
+                connection.Update(obj);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public void DeleteRegional(Regional obj)
+        {
+            try
+            {
+                connection.Delete(obj);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public Regional GetRegional(int id)
+        {
+            try
+            {
+                return connection.Table<Regional>().FirstOrDefault(x => x.ID == id);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public List<Regional> GetRegionales()
+        {
+            try
+            {
+                return connection.Table<Regional>().OrderBy(x => x.ID).ToList();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+        #endregion
+
         //RubricasEvaluacion
-        //Seccion
+
+        #region Seccion
+        public void InsertSeccion(Seccion obj)
+        {
+            try
+            {
+                connection.Insert(obj);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public void UpdateSeccion(Seccion obj)
+        {
+            try
+            {
+                connection.Update(obj);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public void DeleteSeccion(Seccion obj)
+        {
+            try
+            {
+                connection.Delete(obj);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public Seccion GetSeccion(int id)
+        {
+            try
+            {
+                return connection.Table<Seccion>().FirstOrDefault(x => x.ID == id);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public List<Seccion> GetSecciones()
+        {
+            try
+            {
+                return connection.Table<Seccion>().OrderBy(x => x.ID).ToList();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+        #endregion
+
         //TipoAdecuacion
-        //TipoAsignatura
+
+        #region TipoAsignatura
+        public void InsertTipoAsignatura(TipoAsignatura obj)
+        {
+            try
+            {
+                connection.Insert(obj);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public void UpdateTipoAsignatura(TipoAsignatura obj)
+        {
+            try
+            {
+                connection.Update(obj);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public void DeleteTipoAsignatura(TipoAsignatura obj)
+        {
+            try
+            {
+                connection.Delete(obj);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public TipoAsignatura GetTipoAsignatura(int id)
+        {
+            try
+            {
+                return connection.Table<TipoAsignatura>().FirstOrDefault(x => x.ID == id);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public List<TipoAsignatura> GetTiposAsignaturas()
+        {
+            try
+            {
+                return connection.Table<TipoAsignatura>().OrderBy(x => x.ID).ToList();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+        #endregion
+
         //TipoEvaluacion
         //TipoInAsistencia
-        //TipoMatricula
+
+        #region TipoMatricula
+        public void InsertTipoMatricula(TipoMatricula obj)
+        {
+            try
+            {
+                connection.Insert(obj);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public void UpdateTipoMatricula(TipoMatricula obj)
+        {
+            try
+            {
+                connection.Update(obj);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public void DeleteTipoMatricula(TipoMatricula obj)
+        {
+            try
+            {
+                connection.Delete(obj);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public TipoMatricula GetTipoMatricula(int id)
+        {
+            try
+            {
+                return connection.Table<TipoMatricula>().FirstOrDefault(x => x.ID == id);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public List<TipoMatricula> GetTiposMatricula()
+        {
+            try
+            {
+                return connection.Table<TipoMatricula>().OrderBy(x => x.ID).ToList();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+        #endregion
+
         //TipoPeriodicidadAsignatura
-        //TipoPeriodo
+
+        #region TipoPeriodo
+        public void InsertTipoPeriodo(TipoPeriodo obj)
+        {
+            try
+            {
+                connection.Insert(obj);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public void UpdateTipoPeriodo(TipoPeriodo obj)
+        {
+            try
+            {
+                connection.Update(obj);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public void DeleteTipoPeriodo(TipoPeriodo obj)
+        {
+            try
+            {
+                connection.Delete(obj);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public TipoPeriodo GetTipoPeriodo(int id)
+        {
+            try
+            {
+                return connection.Table<TipoPeriodo>().FirstOrDefault(x => x.ID == id);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public List<TipoPeriodo> GetTiposPeriodo()
+        {
+            try
+            {
+                return connection.Table<TipoPeriodo>().OrderBy(x => x.ID).ToList();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+        #endregion
+
         //TipoSalida
         //TipoIndicador
 
@@ -2752,6 +3126,128 @@ namespace RegistroDocente.Controlador
             con.CreateTable<TipoMatricula>();
             con.CreateTable<TipoPeriodicidadAsignatura>();
             con.CreateTable<TipoPeriodo>();
+        }
+
+        private void InsertaDatosBasicos()
+        {
+            InsertCantones();
+        }
+
+        private void InsertCantones()
+        {
+            InsertCanton(new Canton() { Nombre = "San José", Provincia = 1 });
+            InsertCanton(new Canton() { Nombre = "Escazú", Provincia = 1 });
+            InsertCanton(new Canton() { Nombre = "Desamparados", Provincia = 1 });
+            InsertCanton(new Canton() { Nombre = "Puriscal", Provincia = 1 });
+            InsertCanton(new Canton() { Nombre = "Tarrazú", Provincia = 1 });
+            InsertCanton(new Canton() { Nombre = "Aserrí", Provincia = 1 });
+            InsertCanton(new Canton() { Nombre = "Mora", Provincia = 1 });
+            InsertCanton(new Canton() { Nombre = "Goicoechea", Provincia = 1 });
+            InsertCanton(new Canton() { Nombre = "Santa Ana", Provincia = 1 });
+            InsertCanton(new Canton() { Nombre = "Alajuelita", Provincia = 1 });
+            InsertCanton(new Canton() { Nombre = "Vásquez de Coronado", Provincia = 1 });
+            InsertCanton(new Canton() { Nombre = "Acosta", Provincia = 1 });
+            InsertCanton(new Canton() { Nombre = "Tibás", Provincia = 1 });
+            InsertCanton(new Canton() { Nombre = "Moravia", Provincia = 1 });
+            InsertCanton(new Canton() { Nombre = "Montes de Oca", Provincia = 1 });
+            InsertCanton(new Canton() { Nombre = "Turrubares", Provincia = 1 });
+            InsertCanton(new Canton() { Nombre = "Dota, Provincia = 1" });
+            InsertCanton(new Canton() { Nombre = "Curridabat", Provincia = 1 });
+            InsertCanton(new Canton() { Nombre = "Pérez Zeledón", Provincia = 1 });
+            InsertCanton(new Canton() { Nombre = "León Córtes Castro" });
+            InsertCanton(new Canton() { Nombre = "Alajuela" });
+            InsertCanton(new Canton() { Nombre = "San Ramón" });
+            InsertCanton(new Canton() { Nombre = "Grecia" });
+            InsertCanton(new Canton() { Nombre = "San Mateo" });
+            InsertCanton(new Canton() { Nombre = "Atenas" });
+            InsertCanton(new Canton() { Nombre = "Naranjo" });
+            InsertCanton(new Canton() { Nombre = "Palmares" });
+            InsertCanton(new Canton() { Nombre = "Poás" });
+            InsertCanton(new Canton() { Nombre = "Orotina" });
+            InsertCanton(new Canton() { Nombre = "San Carlos" });
+            InsertCanton(new Canton() { Nombre = "Zarcero" });
+            InsertCanton(new Canton() { Nombre = "Valverde Vega" });
+            InsertCanton(new Canton() { Nombre = "Upala" });
+            InsertCanton(new Canton() { Nombre = "Los Chiles" });
+            InsertCanton(new Canton() { Nombre = "Guatuso" });
+            InsertCanton(new Canton() { Nombre = "Cartago" });
+            InsertCanton(new Canton() { Nombre = "Paraíso" });
+            InsertCanton(new Canton() { Nombre = "La Unión" });
+            InsertCanton(new Canton() { Nombre = "Jiménez" });
+            InsertCanton(new Canton() { Nombre = "Turrialba" });
+            InsertCanton(new Canton() { Nombre = "Alvarado" });
+            InsertCanton(new Canton() { Nombre = "Oreamuno" });
+            InsertCanton(new Canton() { Nombre = "El Guarco" });
+            InsertCanton(new Canton() { Nombre = "Heredia" });
+            InsertCanton(new Canton() { Nombre = "Barva" });
+            InsertCanton(new Canton() { Nombre = "Santo Domingo" });
+            InsertCanton(new Canton() { Nombre = "Santa Bárbara" });
+            InsertCanton(new Canton() { Nombre = "San Rafael" });
+            InsertCanton(new Canton() { Nombre = "San Isidro" });
+            InsertCanton(new Canton() { Nombre = "Belén" });
+            InsertCanton(new Canton() { Nombre = "Flores" });
+            InsertCanton(new Canton() { Nombre = "San Pablo" });
+            InsertCanton(new Canton() { Nombre = "Sarapiquí" });
+            InsertCanton(new Canton() { Nombre = "Liberia" });
+            InsertCanton(new Canton() { Nombre = "Nicoya" });
+            InsertCanton(new Canton() { Nombre = "Santa Cruz" });
+            InsertCanton(new Canton() { Nombre = "Bagaces" });
+            InsertCanton(new Canton() { Nombre = "Carrillo" });
+            InsertCanton(new Canton() { Nombre = "Cañas" });
+            InsertCanton(new Canton() { Nombre = "Abangares" });
+            InsertCanton(new Canton() { Nombre = "Tilarán" });
+            InsertCanton(new Canton() { Nombre = "Nandayure" });
+            InsertCanton(new Canton() { Nombre = "La Cruz" });
+            InsertCanton(new Canton() { Nombre = "Hojancha" });
+            InsertCanton(new Canton() { Nombre = "Puntarenas" });
+            InsertCanton(new Canton() { Nombre = "Esparza" });
+            InsertCanton(new Canton() { Nombre = "Buenos Aires" });
+            InsertCanton(new Canton() { Nombre = "Montes de Oro" });
+            InsertCanton(new Canton() { Nombre = "Osa" });
+            InsertCanton(new Canton() { Nombre = "Aguirre" });
+            InsertCanton(new Canton() { Nombre = "Golfito" });
+            InsertCanton(new Canton() { Nombre = "Coto Brus" });
+            InsertCanton(new Canton() { Nombre = "Parrita" });
+            InsertCanton(new Canton() { Nombre = "Corredores" });
+            InsertCanton(new Canton() { Nombre = "Garabito" });
+            InsertCanton(new Canton() { Nombre = "Limón", Provincia = 7 });
+            InsertCanton(new Canton() { Nombre = "Pococí", Provincia = 7 });
+            InsertCanton(new Canton() { Nombre = "Siquirres", Provincia = 7 });
+            InsertCanton(new Canton() { Nombre = "Talamanca", Provincia = 7 });
+            InsertCanton(new Canton() { Nombre = "Matina", Provincia = 7 });
+            InsertCanton(new Canton() { Nombre = "Guacimo", Provincia = 7 });
+        }
+
+        private void InsertDistritos()
+        {
+            InsertDistrito(new Distrito { Canton = 1, Nombre = "Guápiles" });
+        }
+
+        private void InsertRegional()
+        {
+            InsertRegional(new Regional { Nombre = "Guápiles", });
+        }
+
+        private void InsertCircuitos()
+        {
+            InsertCircuito(new Circuito() { Nombre = "01", Regional = 1, });
+        }
+
+        private void InsertInstituciones()
+        {
+            InsertInstitucion(
+                new Institucion
+                {
+                    Circuito = 1,
+                    Nombre = "Colegio Académico de Jiménez",
+                    CodigoPresupuestario = "4144",
+                    Direccion = "Costado norte de polideportivo de Jiménez",
+                    Distrito = 1,
+                    EmailInstitucion = "col.academicodejimenez@mep.go.cr",
+                    Modalidad = 1,
+                    Director = 2,
+                }
+            );
         }
     }
 }
