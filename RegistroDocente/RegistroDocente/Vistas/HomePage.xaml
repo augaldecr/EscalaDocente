@@ -6,7 +6,7 @@
             x:Class="RegistroDocente.Vistas.HomePage"
             Title="Menú principal">
     <!--Pages can be added as references or inline-->
-    <ContentPage Title="Secciones">
+    <ContentPage Title="Matrícula">
         <ContentPage.BindingContext>
             <vm:PersonaViewModel />
         </ContentPage.BindingContext>
@@ -22,7 +22,7 @@
             <Button Command="{Binding NewPersona}" Text="Nuevo" />
         </StackLayout>
     </ContentPage>
-    <ContentPage Title="Estudiantes"
+    <ContentPage Title="Escalas"
                  Padding="8">
         <ContentPage.BindingContext>
             <vm:PersonaViewModel />
@@ -42,7 +42,7 @@
             <Button Command="{Binding NewPersona}" Text="Nuevo" />
         </StackLayout>
     </ContentPage>
-    <ContentPage Title="Escalas"
+    <ContentPage Title="Evaluaciones"
                  Padding="8">
         <StackLayout>
             <Label Text="Evaluaciones" HorizontalTextAlignment="Center" HorizontalOptions="FillAndExpand" Margin="5"  />

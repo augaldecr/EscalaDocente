@@ -1573,7 +1573,7 @@ namespace RegistroDocente.Controlador
         {
             try
             {
-                return connection.Table<Indicador>().Where(x => x.Indicadores == grupo).OrderBy(x => x.ID).ToList();
+                return connection.Table<Indicador>().Where(x => x.ObjetivoGeneral == grupo).OrderBy(x => x.ID).ToList();
             }
             catch (Exception ex)
             {
@@ -2461,6 +2461,18 @@ namespace RegistroDocente.Controlador
             }
         }
 
+        public Persona GetPersona(int id)
+        {
+            try
+            {
+                return connection.Table<Persona>().FirstOrDefault(x => x.ID == id);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
         public List<Persona> GetPersonas()
         {
             try
@@ -2474,7 +2486,68 @@ namespace RegistroDocente.Controlador
         }
         #endregion
 
-        //Provincia
+        #region Provincia
+        public void InsertProvincia(Provincia obj)
+        {
+            try
+            {
+                connection.Insert(obj);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public void UpdateProvincia(Provincia obj)
+        {
+            try
+            {
+                connection.Update(obj);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public void DeleteProvincia(Provincia obj)
+        {
+            try
+            {
+                connection.Delete(obj);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public Provincia GetProvincia(int id)
+        {
+            try
+            {
+                return connection.Table<Provincia>().FirstOrDefault(x => x.ID == id);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public List<Provincia> GetProvincias()
+        {
+            try
+            {
+                return connection.Table<Provincia>().OrderBy(x => x.ID).ToList();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+        #endregion
+
         //Puesto
         //Regional
         //RubricasEvaluacion
@@ -2660,7 +2733,6 @@ namespace RegistroDocente.Controlador
             con.CreateTable<InAsistencia>();
             con.CreateTable<Indicador>();
             con.CreateTable<IndicadorAplicado>();
-            con.CreateTable<Indicadores>();
             con.CreateTable<Institucion>();
             con.CreateTable<Matricula>();
             con.CreateTable<ModalidadInstitucion>();
