@@ -18,7 +18,7 @@ namespace RegistroDocente.Controlador
             connection = new SQLiteConnection(config.Plataforma,
                 Path.Combine(config.DirectorioDB, "RegistroDocente.db3"));
             CreaTablas(connection);
-            if ( GetConfiguracion(1).ID == 1)
+            if (GetConfiguracion(1).ID == 1)
             {
                 InsertaDatosBasicos();
             }
@@ -3145,6 +3145,16 @@ namespace RegistroDocente.Controlador
             InsertAnho(new Anho { Nombre = "2017" });
         }
 
+        private void InsertAsignaturas()
+        {
+            InsertAsignatura(new Asignatura { Nombre = "Español", TipoAsignatura = 1 });
+            InsertAsignatura(new Asignatura { Nombre = "Ciencias", TipoAsignatura = 1 });
+            InsertAsignatura(new Asignatura { Nombre = "Matemática", TipoAsignatura = 1 });
+            InsertAsignatura(new Asignatura { Nombre = "Estudios Sociales", TipoAsignatura = 1 });
+            InsertAsignatura(new Asignatura { Nombre = "Cívica", TipoAsignatura = 1 });
+            InsertAsignatura(new Asignatura { Nombre = "Inglés", TipoAsignatura = 1 });
+        }
+
         private void InsertCantones()
         {
             InsertCanton(new Canton() { Nombre = "San José", Provincia = 1 });
@@ -3235,11 +3245,6 @@ namespace RegistroDocente.Controlador
             InsertDistrito(new Distrito { Canton = 1, Nombre = "Guápiles" });
         }
 
-        private void InsertRegionales()
-        {
-            InsertRegional(new Regional { Nombre = "Guápiles", });
-        }
-
         private void InsertCircuitos()
         {
             InsertCircuito(new Circuito() { Nombre = "01", Regional = 1, });
@@ -3249,23 +3254,6 @@ namespace RegistroDocente.Controlador
         {
             InsertCursoLectivo(new CursoLectivo { Nombre = "2016", Activo = false });
             InsertCursoLectivo(new CursoLectivo { Nombre = "2017", Activo = true });
-        }
-
-        private void InsertInstituciones()
-        {
-            InsertInstitucion(
-                new Institucion
-                {
-                    Circuito = 1,
-                    Nombre = "Colegio Académico de Jiménez",
-                    CodigoPresupuestario = "4144",
-                    Direccion = "Costado norte de polideportivo de Jiménez",
-                    Distrito = 1,
-                    EmailInstitucion = "col.academicodejimenez@mep.go.cr",
-                    Modalidad = 1,
-                    Director = 2,
-                }
-            );
         }
 
         private void InsertCategoriasDocentes()
@@ -3318,10 +3306,155 @@ namespace RegistroDocente.Controlador
             InsertFuncionario(new Funcionario { Persona = 2, CategoriaDocente = 12, Puesto = 2 });
         }
 
+        private void InsertGeneros()
+        {
+            InsertGenero(new Genero { Nombre = "Masculino" });
+            InsertGenero(new Genero { Nombre = "Femenino" });
+            InsertGenero(new Genero { Nombre = "Otro" });
+        }
+
+        private void InsertIndicadores()
+        {
+            InsertIndicador(new Indicador { Nombre = "", ObjetivoGeneral = "" });
+        }
+
+        private void InsertInstituciones()
+        {
+            InsertInstitucion(
+                new Institucion
+                {
+                    Circuito = 1,
+                    Nombre = "Colegio Académico de Jiménez",
+                    CodigoPresupuestario = "4144",
+                    Direccion = "Costado norte de polideportivo de Jiménez",
+                    Distrito = 1,
+                    EmailInstitucion = "col.academicodejimenez@mep.go.cr",
+                    Modalidad = 1,
+                    Director = 2,
+                }
+            );
+
+            InsertInstitucion(
+                new Institucion
+                {
+                    Circuito = 1,
+                    Nombre = "Escuela Central de Guápiles",
+                    CodigoPresupuestario = "3601",
+                    Direccion = "Costado norte de plaza El Salvador",
+                    Distrito = 1,
+                    EmailInstitucion = "esc.centraldeguapiles@mep.go.cr",
+                    Modalidad = 1,
+                    Director = 2,
+                }
+            );
+        }
+
+        private void InsertMatriculas()
+        {
+            InsertMatricula(new Matricula { Estudiante = 1, Seccion = 1, TipoMatricula = 1, EmailEncargado = "" });
+        }
+
+        private void InsertMatriculasAsignaturas()
+        {
+            InsertMatriculaAsignatura(new MatriculaAsignatura { Matricula = 1, Asignatura = 1 });
+        }
+
+        private void InsertModalidadesInstituciones()
+        {
+            InsertModalidadInstitucion(new ModalidadInstitucion { Nombre = "Primaria" });
+            InsertModalidadInstitucion(new ModalidadInstitucion { Nombre = "Secundaria académica" });
+            InsertModalidadInstitucion(new ModalidadInstitucion { Nombre = "Secundaria Técnica" });
+        }
+
+        private void InsertNiveles()
+        {
+            InsertNivel(new Nivel { Nombre = "Primero" });
+            InsertNivel(new Nivel { Nombre = "Segundo" });
+            InsertNivel(new Nivel { Nombre = "Tercero" });
+            InsertNivel(new Nivel { Nombre = "Cuarto" });
+            InsertNivel(new Nivel { Nombre = "Quinto" });
+            InsertNivel(new Nivel { Nombre = "Sexto" });
+            InsertNivel(new Nivel { Nombre = "Sétimo" });
+            InsertNivel(new Nivel { Nombre = "Octavo" });
+            InsertNivel(new Nivel { Nombre = "Noveno" });
+            InsertNivel(new Nivel { Nombre = "Décimo" });
+            InsertNivel(new Nivel { Nombre = "Undécimo" });
+            InsertNivel(new Nivel { Nombre = "Duodécimo" });
+        }
+
+        private void InsertNivelesEscolares()
+        {
+            InsertNivelEscolar(new NivelEscolar { Nombre = "Primaria" });
+            InsertNivelEscolar(new NivelEscolar { Nombre = "Secundaria" });
+        }
+
+        private void InsertObjetivoGeneral()
+        {
+            //InsertObjetivoGeneral(new ObjetivoGeneral { });
+        }
+
+        private void InsertObservaciones()
+        {
+            //InsertObjetivoGeneral(new ObjetivoGeneral { });
+        }
+
+        private void InsertPaises()
+        {
+            InsertPais(new Pais { Nombre = "Costa Rica" });
+        }
+
+        private void InsertPeriodos()
+        {
+            InsertPeriodo(new Periodo { Nombre = "Primer período", CursoLectivo = 2, FechaInicio = new DateTime(2017, 02, 06), FechaFin = new DateTime(2017, 05, 12) });
+            InsertPeriodo(new Periodo { Nombre = "Segundo período", CursoLectivo = 2, FechaInicio = new DateTime(2017, 05, 15), FechaFin = new DateTime(2017, 08, 25) });
+            InsertPeriodo(new Periodo { Nombre = "Tercer período", CursoLectivo = 2, FechaInicio = new DateTime(2017, 08, 28), FechaFin = new DateTime(2017, 12, 11) });
+        }
+
+        private void InsertProvincias()
+        {
+            InsertProvincia(new Provincia { Nombre = "San José", Pais = 1 });
+            InsertProvincia(new Provincia { Nombre = "Cartago", Pais = 1 });
+            InsertProvincia(new Provincia { Nombre = "Alajuela", Pais = 1 });
+            InsertProvincia(new Provincia { Nombre = "Heredia", Pais = 1 });
+            InsertProvincia(new Provincia { Nombre = "Puntarenas", Pais = 1 });
+            InsertProvincia(new Provincia { Nombre = "Guanacaste", Pais = 1 });
+            InsertProvincia(new Provincia { Nombre = "Limón", Pais = 1 });
+        }
+
         private void InsertPuestos()
         {
             InsertPuesto(new Puesto { Nombre = "Docente" });
             InsertPuesto(new Puesto { Nombre = "Director" });
+        }
+
+        private void InsertRegionales()
+        {
+            InsertRegional(new Regional { Nombre = "Guápiles", });
+        }
+
+        private void InsertSecciones()
+        {
+            InsertSeccion(new Seccion { Institucion = 2, Nivel = 2, Grupo = "1", CursoLectivo = 2, ProfesorGuia = 1 });
+        }
+
+        private void InsertTiposAsignaturas()
+        {
+            //Inserti(new Asignatura { Nombre =  });
+        }
+
+        private void InsertTiposIndicadores()
+        {
+            //Inserti(new Asignatura { Nombre =  });
+        }
+
+        private void InsertTiposMatricula()
+        {
+            //Inserti(new Asignatura { Nombre =  });
+        }
+
+        private void InsertTiposPeriodo()
+        {
+            //Inserti(new Asignatura { Nombre =  });
         }
     }
 }
