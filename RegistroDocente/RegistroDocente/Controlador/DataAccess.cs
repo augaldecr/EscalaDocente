@@ -3130,7 +3130,19 @@ namespace RegistroDocente.Controlador
 
         private void InsertaDatosBasicos()
         {
+            InsertAnhos();
             InsertCantones();
+            InsertDistritos();
+            InsertRegionales();
+            InsertCircuitos();
+            InsertInstituciones();
+            InsertCategoriasDocentes();
+        }
+
+        private void InsertAnhos()
+        {
+            InsertAnho(new Anho { Nombre = "2016" });
+            InsertAnho(new Anho { Nombre = "2017" });
         }
 
         private void InsertCantones()
@@ -3223,7 +3235,7 @@ namespace RegistroDocente.Controlador
             InsertDistrito(new Distrito { Canton = 1, Nombre = "Guápiles" });
         }
 
-        private void InsertRegional()
+        private void InsertRegionales()
         {
             InsertRegional(new Regional { Nombre = "Guápiles", });
         }
@@ -3231,6 +3243,12 @@ namespace RegistroDocente.Controlador
         private void InsertCircuitos()
         {
             InsertCircuito(new Circuito() { Nombre = "01", Regional = 1, });
+        }
+
+        private void InsertCursosLectivos()
+        {
+            InsertCursoLectivo(new CursoLectivo { Nombre = "2016", Activo = false });
+            InsertCursoLectivo(new CursoLectivo { Nombre = "2017", Activo = true });
         }
 
         private void InsertInstituciones()
@@ -3248,6 +3266,62 @@ namespace RegistroDocente.Controlador
                     Director = 2,
                 }
             );
+        }
+
+        private void InsertCategoriasDocentes()
+        {
+            InsertCategoriaDocente(new CategoriaDocente { Nombre = "PT1" });
+            InsertCategoriaDocente(new CategoriaDocente { Nombre = "PT2" });
+            InsertCategoriaDocente(new CategoriaDocente { Nombre = "PT3" });
+            InsertCategoriaDocente(new CategoriaDocente { Nombre = "PT4" });
+            InsertCategoriaDocente(new CategoriaDocente { Nombre = "PT5" });
+            InsertCategoriaDocente(new CategoriaDocente { Nombre = "PT6" });
+            InsertCategoriaDocente(new CategoriaDocente { Nombre = "MT1" });
+            InsertCategoriaDocente(new CategoriaDocente { Nombre = "MT2" });
+            InsertCategoriaDocente(new CategoriaDocente { Nombre = "MT3" });
+            InsertCategoriaDocente(new CategoriaDocente { Nombre = "MT4" });
+            InsertCategoriaDocente(new CategoriaDocente { Nombre = "MT5" });
+            InsertCategoriaDocente(new CategoriaDocente { Nombre = "MT6" });
+            InsertCategoriaDocente(new CategoriaDocente { Nombre = "VT1" });
+            InsertCategoriaDocente(new CategoriaDocente { Nombre = "VT2" });
+            InsertCategoriaDocente(new CategoriaDocente { Nombre = "VT3" });
+            InsertCategoriaDocente(new CategoriaDocente { Nombre = "VT4" });
+            InsertCategoriaDocente(new CategoriaDocente { Nombre = "VT5" });
+            InsertCategoriaDocente(new CategoriaDocente { Nombre = "VT6" });
+        }
+
+        private void InsertCicloEducativo()
+        {
+            InsertCicloEducativo(new CicloEducativo() { Nombre = "Ciclo I", NotaMinima = 65 });
+            InsertCicloEducativo(new CicloEducativo() { Nombre = "Ciclo II", NotaMinima = 65 });
+            InsertCicloEducativo(new CicloEducativo() { Nombre = "Ciclo III", NotaMinima = 65 });
+            InsertCicloEducativo(new CicloEducativo() { Nombre = "Ciclo IV", NotaMinima = 70 });
+        }
+
+        private void InsertEscalas()
+        {
+            InsertEscala(new Escala { Nombre = "Liker" });
+        }
+
+        private void InsertEscalaNodos()
+        {
+            InsertEscalaNodo(new EscalaNodo { Escala = 1, Nombre = "Excelente", Valor = 5 });
+            InsertEscalaNodo(new EscalaNodo { Escala = 1, Nombre = "Muy bueno", Valor = 4 });
+            InsertEscalaNodo(new EscalaNodo { Escala = 1, Nombre = "Bueno", Valor = 3 });
+            InsertEscalaNodo(new EscalaNodo { Escala = 1, Nombre = "Regular", Valor = 2 });
+            InsertEscalaNodo(new EscalaNodo { Escala = 1, Nombre = "Deficiente", Valor = 1 });
+        }
+
+        private void InsertFuncionarios()
+        {
+            InsertFuncionario(new Funcionario { Persona = 1, CategoriaDocente = 18, Puesto = 1 });
+            InsertFuncionario(new Funcionario { Persona = 2, CategoriaDocente = 12, Puesto = 2 });
+        }
+
+        private void InsertPuestos()
+        {
+            InsertPuesto(new Puesto { Nombre = "Docente" });
+            InsertPuesto(new Puesto { Nombre = "Director" });
         }
     }
 }
