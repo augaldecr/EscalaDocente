@@ -18,8 +18,9 @@ namespace RegistroDocente.Controlador
             connection = new SQLiteConnection(config.Plataforma,
                 Path.Combine(config.DirectorioDB, "RegistroDocente.db3"));
             CreaTablas(connection);
-            if (GetConfiguracion(1).ID == 1)
+            if (GetConfiguracion(1) == null)
             {
+                InicializeParameters();
                 InsertaDatosBasicos();
             }
         }
@@ -3081,6 +3082,7 @@ namespace RegistroDocente.Controlador
             connection.Dispose();
         }
 
+        #region Methods
         private void CreaTablas(SQLiteConnection con)
         {
             con.CreateTable<Persona>();
@@ -3094,11 +3096,14 @@ namespace RegistroDocente.Controlador
             con.CreateTable<CicloEducativo>();
             con.CreateTable<Circuito>();
             con.CreateTable<ComponentesPlanEval>();
+            con.CreateTable<Configuracion>();
             con.CreateTable<CursoLectivo>();
             con.CreateTable<Dia>();
             con.CreateTable<DiaLectivo>();
             con.CreateTable<DiaNoLectivo>();
             con.CreateTable<Distrito>();
+            con.CreateTable<Escala>();
+            con.CreateTable<EscalaNodo>();
             con.CreateTable<Especialidad>();
             con.CreateTable<Evaluacion>();
             con.CreateTable<Funcionario>();
@@ -3109,9 +3114,12 @@ namespace RegistroDocente.Controlador
             con.CreateTable<IndicadorAplicado>();
             con.CreateTable<Institucion>();
             con.CreateTable<Matricula>();
+            con.CreateTable<MatriculaAsignatura>();
             con.CreateTable<ModalidadInstitucion>();
             con.CreateTable<Nivel>();
             con.CreateTable<NivelEscolar>();
+            con.CreateTable<ObjetivoGeneral>();
+            con.CreateTable<Observacion>();
             con.CreateTable<Pais>();
             con.CreateTable<PaseDeLista>();
             con.CreateTable<Periodo>();
@@ -3123,20 +3131,52 @@ namespace RegistroDocente.Controlador
             con.CreateTable<TipoAsignatura>();
             con.CreateTable<TipoEvaluacion>();
             con.CreateTable<TipoInAsistencia>();
+            con.CreateTable<TipoIndicador>();
             con.CreateTable<TipoMatricula>();
             con.CreateTable<TipoPeriodicidadAsignatura>();
             con.CreateTable<TipoPeriodo>();
         }
 
+        private void InicializeParameters()
+        {
+            InsertConfiguracion(new Configuracion { ID = 1, DatosBasicos = false, Listo = false });
+        }
+
+        #region Inserts of basic data
         private void InsertaDatosBasicos()
         {
             InsertAnhos();
+            InsertAsignaturas();
             InsertCantones();
             InsertDistritos();
-            InsertRegionales();
             InsertCircuitos();
-            InsertInstituciones();
+            InsertCursosLectivos();
             InsertCategoriasDocentes();
+            InsertCicloEducativo();
+            InsertEscalas();
+            InsertEscalaNodos();
+            InsertFuncionarios();
+            InsertGeneros();
+            InsertIndicadores();
+            InsertInstituciones();
+            InsertMatriculas();
+            InsertMatriculasAsignaturas();
+            InsertModalidadesInstituciones();
+            InsertNiveles();
+            InsertNivelesEscolares();
+            InsertObjetivoGeneral();
+            InsertObservaciones();
+            InsertPaises();
+            InsertPeriodos();
+            InsertProvincias();
+            InsertPuestos();
+            InsertRegionales();
+            InsertSecciones();
+            InsertTiposAsignaturas();
+            InsertTiposIndicadores();
+            InsertTiposMatricula();
+            InsertTiposPeriodo();
+            SetConfigurated();
         }
 
         private void InsertAnhos()
@@ -3315,7 +3355,7 @@ namespace RegistroDocente.Controlador
 
         private void InsertIndicadores()
         {
-            InsertIndicador(new Indicador { Nombre = "", ObjetivoGeneral = "" });
+            //InsertIndicador(new Indicador { Nombre = "", ObjetivoGeneral = "" });
         }
 
         private void InsertInstituciones()
@@ -3439,7 +3479,7 @@ namespace RegistroDocente.Controlador
 
         private void InsertTiposAsignaturas()
         {
-            //Inserti(new Asignatura { Nombre =  });
+            InsertTipoAsignatura(new TipoAsignatura { Nombre = "Básicas" });
         }
 
         private void InsertTiposIndicadores()
@@ -3449,12 +3489,22 @@ namespace RegistroDocente.Controlador
 
         private void InsertTiposMatricula()
         {
-            //Inserti(new Asignatura { Nombre =  });
+            InsertTipoMatricula(new TipoMatricula { Nombre = "Ordinaria" });
         }
 
         private void InsertTiposPeriodo()
         {
-            //Inserti(new Asignatura { Nombre =  });
+            InsertTipoPeriodo(new TipoPeriodo { Nombre = "Trimestral" });
+            InsertTipoPeriodo(new TipoPeriodo { Nombre = "Semestral" });
+            InsertTipoPeriodo(new TipoPeriodo { Nombre = "Unisemestral" });
+            InsertTipoPeriodo(new TipoPeriodo { Nombre = "Cuatrimestral" });
         }
+
+        private void SetConfigurated()
+        {
+            UpdateConfiguracion(new Configuracion { ID = 1, DatosBasicos = true});
+        }
+        #endregion 
+        #endregion
     }
 }

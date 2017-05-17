@@ -115,6 +115,9 @@
     <Compile Include="Vistas\AnhosPage.xaml.cs">
       <DependentUpon>AnhosPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Vistas\ConfiguracionesPage.xaml.cs">
+      <DependentUpon>ConfiguracionesPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Vistas\CyMPage.xaml.cs">
       <DependentUpon>CyMPage.xaml</DependentUpon>
     </Compile>
@@ -123,6 +126,9 @@
     </Compile>
     <Compile Include="Vistas\EscalasPage.xaml.cs">
       <DependentUpon>EscalasPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\EvaluacionesPage.xaml.cs">
+      <DependentUpon>EvaluacionesPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Vistas\HomePage.xaml.cs">
       <DependentUpon>HomePage.xaml</DependentUpon>
@@ -285,6 +291,18 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Vistas\EscalaPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Vistas\EvaluacionesPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Vistas\ConfiguracionesPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>

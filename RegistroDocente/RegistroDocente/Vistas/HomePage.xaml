@@ -3,88 +3,11 @@
             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
             xmlns:vm="clr-namespace:RegistroDocente.ViewModels"
             xmlns:controls="clr-namespace:RegistroDocente.Utils"
+            xmlns:views="clr-namespace:RegistroDocente.Vistas"
             x:Class="RegistroDocente.Vistas.HomePage"
             Title="Menú principal">
-    <!--Pages can be added as references or inline-->
-    <ContentPage Title="Matrícula">
-        <ContentPage.BindingContext>
-            <vm:PersonaViewModel />
-        </ContentPage.BindingContext>
-        <StackLayout>
-            <ListView ItemsSource="{Binding listadoPersonas}"
-                  SelectedItem="{Binding selectedPerson}" >
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <TextCell Text="{Binding Cedula}" Detail="{Binding NombreCompleto}" />
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
-            <Button Command="{Binding NewPersona}" Text="Nuevo" />
-        </StackLayout>
-    </ContentPage>
-    <ContentPage Title="Escalas"
-                 Padding="8">
-        <ContentPage.BindingContext>
-            <vm:PersonaViewModel />
-        </ContentPage.BindingContext>
-        <StackLayout>
-            <controls:BindablePicker 
-                
-                />
-            <ListView ItemsSource="{Binding listadoPersonas}"
-                  SelectedItem="{Binding selectedPerson}" >
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <TextCell Text="{Binding Cedula}" Detail="{Binding NombreCompleto}" />
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
-            <Button Command="{Binding NewPersona}" Text="Nuevo" />
-        </StackLayout>
-    </ContentPage>
-    <ContentPage Title="Evaluaciones"
-                 Padding="8">
-        <StackLayout>
-            <Label Text="Evaluaciones" HorizontalTextAlignment="Center" HorizontalOptions="FillAndExpand" Margin="5"  />
-            <BoxView Color="Blue" VerticalOptions="FillAndExpand" />
-        </StackLayout>
-    </ContentPage>
-    <ContentPage Title="Ajustes">
-        <ContentPage.BindingContext>
-            <vm:MainViewModel />
-        </ContentPage.BindingContext>
-        <TableView Intent="Settings">
-        <TableRoot>
-            <TableSection Title="Ajustes">
-                <TextCell Text="Catálogo de clases"
-                          TextColor="Blue" 
-                          Command="{Binding CyM}"></TextCell>
-                <TextCell Text="Personas"
-                          TextColor="Blue" 
-                          Command="{Binding Personas}"></TextCell>
-                <TextCell Text="Períodos"
-                          TextColor="Blue" 
-                          Command="{Binding Periodos}"></TextCell>
-                <TextCell Text="Instituciones"
-                          TextColor="Blue"
-                          Command="{Binding Instituciones}"></TextCell>
-                <TextCell Text="Asignaturas"
-                          TextColor="Blue"
-                          Command="{Binding Asignaturas}"></TextCell>
-                <TextCell Text="Secciones"
-                          TextColor="Blue"
-                          Command="{Binding Secciones}"></TextCell>
-                <TextCell Text="Horarios"
-                          TextColor="Blue"
-                          Command="{Binding Horarios}"></TextCell>
-                <TextCell Text="Porcentajes"
-                          TextColor="Blue"
-                          Command="{Binding Porcentajes}"></TextCell>
-                <TextCell Text="Ajustes de App"
-                          TextColor="Blue"
-                          Command="{Binding Ajustes}"></TextCell>
-            </TableSection>
-        </TableRoot>
-        </TableView>
-    </ContentPage>
+    <views:MatriculasPage />
+    <views:EscalasPage />
+    <views:EvaluacionesPage />
+    <views:ConfiguracionesPage />
 </TabbedPage>

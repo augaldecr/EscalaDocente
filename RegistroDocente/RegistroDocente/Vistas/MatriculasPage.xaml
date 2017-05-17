@@ -1,5 +1,30 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="RegistroDocente.Vistas.MatriculasPage">
+             x:Class="RegistroDocente.Vistas.MatriculasPage"
+             xmlns:vm="clr-namespace:RegistroDocente.ViewModels"
+             xmlns:local="clr-namespace:RegistroDocente.Utils"
+             Title="Matriculas"
+             Padding="8">
+    <ScrollView>
+        <StackLayout>
+            <Picker x:Name="pckInstituciones" SelectedIndexChanged="pckInstituciones_SelectedIndexChanged">
+                <Picker.Items>
+                    <x:String>Escuela Central de Guápiles</x:String>
+                    <x:String>Escuela Central de Guácimo</x:String>
+                    <x:String>Colegio Académico de Jiménez</x:String>
+                </Picker.Items>
+            </Picker>
+            <Picker x:Name="pckSecciones" SelectedIndexChanged="pckSecciones_SelectedIndexChanged"/>
+            <StackLayout>
+                <ListView ItemsSource="estudiantes">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <TextCell Text="{Binding Cedula}" Detail="{Binding NombreCompleto}" />
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+        </StackLayout>
+    </ScrollView>
 </ContentPage>

@@ -39,36 +39,36 @@ namespace RegistroDocente.ViewModels
         #endregion
 
         #region Properties
-        public ObservableCollection<Anho> listadoAnhos
+        public ObservableCollection<Canton> listadoAnhos
         {
             get
             {
-                if (ListadoAnhos == null)
+                if (ListadoCantones == null)
                 {
-                    llenarListadoAnhos();
+                    llenarListadoCantones();
                 }
-                return ListadoAnhos;
+                return ListadoCantones;
             }
             set
             {
-                ListadoAnhos = value;
+                ListadoCantones = value;
             }
         }
 
-        public Anho selectedAnho
+        public Canton selectedCanton
         {
             get
             {
-                return SelectedAnho;
+                return SelectedCanton;
             }
             set
             {
-                if (SelectedAnho != value)
+                if (SelectedCanton != value)
                 {
-                    SelectedAnho = value;
-                    OnPropertyChanged("SelectedAnho");
+                    SelectedCanton = value;
+                    OnPropertyChanged("SelectedCanton");
 
-                    editAnhoPage(SelectedAnho);
+                    editCantonPage(SelectedCanton);
                 }
             }
         }
@@ -76,12 +76,12 @@ namespace RegistroDocente.ViewModels
 
         #region Methods
 
-        private async void editAnhoPage(Anho anho)
+        private async void editCantonPage(Canton canton)
         {
-            await Application.Current.MainPage.Navigation.PushModalAsync(new AnhoPage(anho));
+            //await Application.Current.MainPage.Navigation.PushModalAsync(new CantonPage(canton));
         }
 
-        private async void openNewAnhoPage()
+        private async void openNewCantonPage()
         {
             await Application.Current.MainPage.Navigation.PushModalAsync(new AnhoPage());
         }
@@ -91,12 +91,12 @@ namespace RegistroDocente.ViewModels
             await Application.Current.MainPage.DisplayAlert(title, message, button);
         }
 
-        public void llenarListadoAnhos()
+        public void llenarListadoCantones()
         {
             using (DataAccess db = new DataAccess())
             {
-                ObservableCollection<Anho> Anhos = new ObservableCollection<Anho>(db.GetAnhos());
-                ListadoAnhos = Anhos;
+                ObservableCollection<Canton> Cantones = new ObservableCollection<Canton>(db.GetCantones());
+                ListadoCantones = Cantones;
             }
         }
 
@@ -104,7 +104,7 @@ namespace RegistroDocente.ViewModels
         {
             Insert = new Command(() =>
             {
-                Anho obj = new Anho()
+                Canton obj = new Canton()
                 {
                     Nombre = Nombre,
                 };
@@ -113,7 +113,7 @@ namespace RegistroDocente.ViewModels
                 {
                     try
                     {
-                        db.InsertAnho(obj);
+                        db.InsertCanton(obj);
                     }
                     catch (Exception ex)
                     {
@@ -125,7 +125,7 @@ namespace RegistroDocente.ViewModels
 
             Update = new Command(() =>
             {
-                Anho obj = new Anho()
+                Canton obj = new Canton()
                 {
                     ID = ID,
                     Nombre = Nombre,
@@ -135,7 +135,7 @@ namespace RegistroDocente.ViewModels
                 {
                     try
                     {
-                        db.UpdateAnho(obj);
+                        db.UpdateCanton(obj);
                     }
                     catch (Exception ex)
                     {
@@ -147,7 +147,7 @@ namespace RegistroDocente.ViewModels
 
             Delete = new Command(() =>
             {
-                Anho obj = new Anho()
+                Canton obj = new Canton()
                 {
                     ID = ID,
                     Nombre = Nombre,
@@ -156,7 +156,7 @@ namespace RegistroDocente.ViewModels
                 {
                     try
                     {
-                        db.DeleteAnho(obj);
+                        db.DeleteCanton(obj);
                     }
                     catch (Exception ex)
                     {
@@ -169,14 +169,14 @@ namespace RegistroDocente.ViewModels
 
             New = new Command(() =>
             {
-                Anho obj = new Anho()
+                Canton obj = new Canton()
                 {
                     Nombre = string.Empty,
                 };
             });
 
-            NewAnho = new Command(() => {
-                openNewAnhoPage();
+            NewCanton = new Command(() => {
+                openNewCantonPage();
             });
 
 

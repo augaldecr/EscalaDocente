@@ -4,7 +4,7 @@ namespace RegistroDocente.Models
 {
     public class Configuracion
     {
-    	[NotNull]
+    	[PrimaryKey]
         public int ID { get; set; }
         [NotNull, Default(value:false)]
         public bool Listo { get; set; }
