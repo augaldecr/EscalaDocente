@@ -6,4 +6,11 @@
              xmlns:local="clr-namespace:RegistroDocente.Utils"
              Title="Indicador"
              Padding="8">
+    <StackLayout>
+        <Entry x:Name="txtTexto" />
+        <StackLayout Orientation="Horizontal">
+            <Button Text="Guardar" x:Name="btnGuardar" />
+            <Button Text="Cancelar" x:Name="btnCancelar" />
+        </StackLayout>
+    </StackLayout>
 </ContentPage>

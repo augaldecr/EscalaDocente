@@ -79,14 +79,14 @@ namespace RegistroDocente.Vistas
             }
         }
 
-        private void pckObjetivos_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void lstIndicadores_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
+            abreIndicadorPage(e.SelectedItem.ToString());
+        }
 
+        private async void abreIndicadorPage(string obj)
+        {
+            await Application.Current.MainPage.Navigation.PushModalAsync(new IndicadoresPage(obj));
         }
     }
 }

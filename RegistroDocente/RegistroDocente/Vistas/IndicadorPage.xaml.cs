@@ -16,5 +16,11 @@ namespace RegistroDocente.Vistas
         {
             InitializeComponent();
         }
+
+        public IndicadorPage(string obj)
+        {
+            InitializeComponent();
+            txtTexto.Text = obj;
+        }
     }
 }
