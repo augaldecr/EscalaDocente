@@ -4,7 +4,7 @@
              x:Class="RegistroDocente.Vistas.MatriculasPage"
              xmlns:vm="clr-namespace:RegistroDocente.ViewModels"
              xmlns:local="clr-namespace:RegistroDocente.Utils"
-             Title="Matriculas"
+             Title="Matrícula"
              Padding="8">
     <ScrollView>
         <StackLayout>
@@ -17,7 +17,7 @@
             </Picker>
             <Picker x:Name="pckSecciones" SelectedIndexChanged="pckSecciones_SelectedIndexChanged"/>
             <StackLayout>
-                <ListView ItemsSource="estudiantes">
+                <ListView ItemsSource="estudiantes" x:Name="lstMatricula" >
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <TextCell Text="{Binding Cedula}" Detail="{Binding NombreCompleto}" />

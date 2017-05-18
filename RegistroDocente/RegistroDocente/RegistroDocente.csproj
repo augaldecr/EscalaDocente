@@ -121,17 +121,17 @@
     <Compile Include="Vistas\CyMPage.xaml.cs">
       <DependentUpon>CyMPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Vistas\EscalaPage.xaml.cs">
-      <DependentUpon>EscalaPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Vistas\EscalasPage.xaml.cs">
-      <DependentUpon>EscalasPage.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Vistas\EvaluacionesPage.xaml.cs">
       <DependentUpon>EvaluacionesPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Vistas\HomePage.xaml.cs">
       <DependentUpon>HomePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\IndicadoresPage.xaml.cs">
+      <DependentUpon>IndicadoresPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\IndicadorPage.xaml.cs">
+      <DependentUpon>IndicadorPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Vistas\LoginPage.xaml.cs">
       <DependentUpon>LoginPage.xaml</DependentUpon>
@@ -141,6 +141,9 @@
     </Compile>
     <Compile Include="Vistas\MatriculasPage.xaml.cs">
       <DependentUpon>MatriculasPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\ObservacionesPage.xaml.cs">
+      <DependentUpon>ObservacionesPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Vistas\PeriodosPage.xaml.cs">
       <DependentUpon>PeriodosPage.xaml</DependentUpon>
@@ -284,18 +287,6 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Vistas\EscalasPage.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Vistas\EscalaPage.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
     <EmbeddedResource Include="Vistas\EvaluacionesPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
@@ -303,6 +294,24 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Vistas\ConfiguracionesPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Vistas\IndicadoresPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Vistas\IndicadorPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Vistas\ObservacionesPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>

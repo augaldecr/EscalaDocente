@@ -10,9 +10,9 @@ using Xamarin.Forms.Xaml;
 namespace RegistroDocente.Vistas
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class EscalasPage : ContentPage
+    public partial class IndicadorPage : ContentPage
     {
-        public EscalasPage()
+        public IndicadorPage()
         {
             InitializeComponent();
         }

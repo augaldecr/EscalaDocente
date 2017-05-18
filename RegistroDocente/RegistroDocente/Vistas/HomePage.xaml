@@ -7,7 +7,8 @@
             x:Class="RegistroDocente.Vistas.HomePage"
             Title="Menú principal">
     <views:MatriculasPage />
-    <views:EscalasPage />
+    <views:ObservacionesPage />
     <views:EvaluacionesPage />
+    <!--views: Resultados-->
     <views:ConfiguracionesPage />
 </TabbedPage>

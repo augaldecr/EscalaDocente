@@ -15,10 +15,10 @@ namespace RegistroDocente.Vistas
     public partial class MatriculasPage : ContentPage
     {
         ObservableCollection<Persona> estudiantes = new ObservableCollection<Persona>();
-
         public MatriculasPage()
         {
             InitializeComponent();
+            lstMatricula.ItemsSource = estudiantes;
         }
 
         private void pckInstituciones_SelectedIndexChanged(object sender, EventArgs e)
@@ -57,9 +57,9 @@ namespace RegistroDocente.Vistas
         {
             if (pckInstituciones.SelectedIndex == 0)
             {
-                estudiantes.Clear();
                 if (pckSecciones.SelectedIndex==0)
                 {
+                    estudiantes.Clear();
                     estudiantes.Add(new Persona { Cedula = "1-0111-0111", Apellido1 = "Perez", Apellido2 = "Perez", Nombre = "Carlos",
                                                   FechaNacimiento = new DateTime(2008, 02, 01), Genero = 0 });
                     estudiantes.Add(new Persona { Cedula = "2-0222-0222", Apellido1 = "Suarez", Apellido2 = "Suarez", Nombre = "Ana",
@@ -69,30 +69,31 @@ namespace RegistroDocente.Vistas
                 }
                 else if (pckSecciones.SelectedIndex == 1)
                 {
+                    estudiantes.Clear();
                     estudiantes.Add(new Persona
                     {
-                        Cedula = "1-0111-0111",
-                        Apellido1 = "Perez",
-                        Apellido2 = "Perez",
-                        Nombre = "Carlos",
+                        Cedula = "4-0444-0444",
+                        Apellido1 = "Ibrahimovic",
+                        Apellido2 = "Ibrahimovic",
+                        Nombre = "Slathan",
                         FechaNacimiento = new DateTime(2008, 02, 01),
                         Genero = 0
                     });
                     estudiantes.Add(new Persona
                     {
-                        Cedula = "2-0222-0222",
-                        Apellido1 = "Suarez",
-                        Apellido2 = "Suarez",
-                        Nombre = "Ana",
+                        Cedula = "5-0555-0555",
+                        Apellido1 = "Gaucho",
+                        Apellido2 = "Gaucho",
+                        Nombre = "Ronaldinho",
                         FechaNacimiento = new DateTime(2008, 02, 01),
                         Genero = 1
                     });
                     estudiantes.Add(new Persona
                     {
-                        Cedula = "3-0333-0333",
-                        Apellido1 = "Brenes",
-                        Apellido2 = "Brenes",
-                        Nombre = "José",
+                        Cedula = "6-0661-0661",
+                        Apellido1 = "Lagos",
+                        Apellido2 = "Lagos",
+                        Nombre = "Cristhian",
                         FechaNacimiento = new DateTime(2008, 02, 01),
                         Genero = 1
                     });
@@ -100,25 +101,12 @@ namespace RegistroDocente.Vistas
             }
             else if (pckInstituciones.SelectedIndex == 1)
             {
-                pckSecciones.Items.Clear();
-                pckSecciones.Items.Add("3-1");
-                pckSecciones.Items.Add("4-2");
+                estudiantes.Clear();
             }
             else if (pckInstituciones.SelectedIndex == 2)
             {
-                pckSecciones.Items.Clear();
-                pckSecciones.Items.Add("7-1");
-                pckSecciones.Items.Add("7-2");
-                pckSecciones.Items.Add("7-3");
-                pckSecciones.Items.Add("7-4");
-                pckSecciones.Items.Add("7-5");
-                pckSecciones.Items.Add("7-6");
-                pckSecciones.Items.Add("7-7");
+                estudiantes.Clear();
             }
         }
-
-
-
-
     }
 }
