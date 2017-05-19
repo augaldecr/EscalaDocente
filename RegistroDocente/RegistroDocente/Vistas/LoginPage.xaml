@@ -16,7 +16,8 @@
                        Text="Ingrese usuario y contraseña" />
                 <Entry Placeholder="Ingrese su usuario"
                        Text="{Binding User, Mode=TwoWay}" />
-                <Entry Placeholder="Ingrese su contraseña"
+                <Entry IsPassword="True"
+                       Placeholder="Ingrese su contraseña"
                        Text="{Binding Password, Mode=TwoWay}" />
                 <StackLayout Orientation="Horizontal" Spacing="10">
                     <Label Text="Recordarme"

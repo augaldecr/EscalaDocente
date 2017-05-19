@@ -121,6 +121,12 @@
     <Compile Include="Vistas\CyMPage.xaml.cs">
       <DependentUpon>CyMPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Vistas\EstrategiaPage.xaml.cs">
+      <DependentUpon>EstrategiaPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\EstrategiasPage.xaml.cs">
+      <DependentUpon>EstrategiasPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Vistas\EvaluacionesPage.xaml.cs">
       <DependentUpon>EvaluacionesPage.xaml</DependentUpon>
     </Compile>
@@ -312,6 +318,18 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Vistas\ObservacionesPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Vistas\EstrategiasPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Vistas\EstrategiaPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>

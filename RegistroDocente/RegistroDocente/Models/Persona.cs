@@ -201,6 +201,14 @@ namespace RegistroDocente.Models
                 return string.Format("{0} {1} {2}", this.Apellido1, this.Apellido2, this.Nombre);
             }
         }
+
+        public string NombreAbreviado
+        {
+            get
+            {
+                return string.Format("{0} {1}. {2}", this.Apellido1, this.Apellido2.Substring(0,1), this.Nombre);
+            }
+        }
         #endregion
     }
 }

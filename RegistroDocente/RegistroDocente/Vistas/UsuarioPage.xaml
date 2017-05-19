@@ -20,7 +20,8 @@
                 <ViewCell>
                     <StackLayout Orientation="Horizontal">
                         <Label  Text="{Binding Persona}" 
-                                x:Name="Cedula"/>
+                                x:Name="Cedula"
+                                IsVisible="False"/>
                         <Button Command="{Binding Insert}"
                                 HorizontalOptions="CenterAndExpand"
                                 Text="Guardar" />

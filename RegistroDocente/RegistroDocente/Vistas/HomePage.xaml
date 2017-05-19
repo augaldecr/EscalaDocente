@@ -8,6 +8,7 @@
             Title="Menú principal">
     <views:MatriculasPage />
     <views:ObservacionesPage />
+    <views:EstrategiasPage />
     <views:EvaluacionesPage />
     <!--views: Resultados-->
     <views:ConfiguracionesPage />

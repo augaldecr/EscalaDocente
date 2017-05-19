@@ -1,13 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="RegistroDocente.Vistas.EvaluacionesPage"
+             x:Class="RegistroDocente.Vistas.EstrategiasPage"
              xmlns:vm="clr-namespace:RegistroDocente.ViewModels"
              xmlns:local="clr-namespace:RegistroDocente.Utils"
-             Title="Evaluación final"
+             Title="Estrategias"
              Padding="8">
     <ScrollView>
         <StackLayout>
+            
             <Picker x:Name="pckInstituciones" SelectedIndexChanged="pckInstituciones_SelectedIndexChanged"
                     Title="Instituciones" >
                 <Picker.Items>
@@ -16,8 +17,7 @@
                     <x:String>Colegio Académico de Jiménez</x:String>
                 </Picker.Items>
             </Picker>
-            <Picker x:Name="pckSecciones" SelectedIndexChanged="pckSecciones_SelectedIndexChanged"
-                    Title="Secciones" />
+            <Picker x:Name="pckSecciones" Title="Secciones" />
             <Picker x:Name="pckMaterias" SelectedIndexChanged="pckMaterias_SelectedIndexChanged"
                     Title="Materias">
                 <Picker.Items>
@@ -30,21 +30,7 @@
                 </Picker.Items>
             </Picker>
             <StackLayout>
-                <Label x:Name="lblIndicador"/>
-                <ListView ItemsSource="estudiantes" x:Name="lstMatricula" IsVisible="False" >
-                    <ListView.ItemTemplate>
-                        <DataTemplate>
-                            <ViewCell>
-                                <StackLayout Orientation="Horizontal">
-                                    <Label Text="{Binding NombreAbreviado}" />
-                                    <Entry Text="5" x:Name="txtind1" Keyboard="Numeric" Focused="txtind1_Focused"/>
-                                    <Entry Text="5" x:Name="txtind2" Keyboard="Numeric" Focused="txtind2_Focused"/>
-                                    <Entry Text="5" x:Name="txtind3" Keyboard="Numeric" Focused="txtind3_Focused"/>
-                                </StackLayout>
-                            </ViewCell>
-                        </DataTemplate>
-                    </ListView.ItemTemplate>
-                </ListView>
+                <ListView x:Name="lstIndicadores" ItemSelected="lstIndicadores_ItemSelected"/>
             </StackLayout>
         </StackLayout>
     </ScrollView>

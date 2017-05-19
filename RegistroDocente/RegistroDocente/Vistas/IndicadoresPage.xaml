@@ -9,7 +9,7 @@
     <ScrollView>
         <StackLayout>
             <Label x:Name="lblIndicador" />
-            <ListView x:Name="lstIndicadores" ItemSelected="lstIndicadores_ItemSelected"/>
+            <ListView x:Name="lstIndicadores" ItemSelected="lstIndicadores_ItemSelected" />
         </StackLayout>
     </ScrollView>
 </ContentPage>
