@@ -37,9 +37,15 @@
                             <ViewCell>
                                 <StackLayout Orientation="Horizontal">
                                     <Label Text="{Binding NombreAbreviado}" />
-                                    <Entry Text="5" x:Name="txtind1" Keyboard="Numeric" Focused="txtind1_Focused"/>
-                                    <Entry Text="5" x:Name="txtind2" Keyboard="Numeric" Focused="txtind2_Focused"/>
-                                    <Entry Text="5" x:Name="txtind3" Keyboard="Numeric" Focused="txtind3_Focused"/>
+                                    <Entry Text="5" x:Name="txtind1" Keyboard="Numeric" Focused="txtind1_Focused" />
+                                    <Entry Text="5" x:Name="txtind2" Keyboard="Numeric" Focused="txtind2_Focused" />
+                                    <Entry Text="5" x:Name="txtind3" Keyboard="Numeric" Focused="txtind3_Focused" />
+                                    <Label Text="Punt: " />
+                                    <Entry Text="15" x:Name="txtPunt" Keyboard="Numeric" Focused="txtind3_Focused" />
+                                    <Label Text="Cal: " />
+                                    <Entry Text="100" x:Name="txtCal" Keyboard="Numeric" Focused="txtind3_Focused" />
+                                    <Label Text="Porc: " />
+                                    <Entry Text="40" x:Name="txtPorc" Keyboard="Numeric" Focused="txtind3_Focused" />
                                 </StackLayout>
                             </ViewCell>
                         </DataTemplate>

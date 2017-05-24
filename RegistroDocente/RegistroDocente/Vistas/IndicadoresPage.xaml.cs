@@ -45,5 +45,15 @@ namespace RegistroDocente.Vistas
         {
             await Application.Current.MainPage.Navigation.PushModalAsync(new IndicadorPage(obj));
         }
+
+        private void btnGuardar_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PopModalAsync(true);
+        }
+
+        private void btnCancelar_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PopModalAsync(true);
+        }
     }
 }

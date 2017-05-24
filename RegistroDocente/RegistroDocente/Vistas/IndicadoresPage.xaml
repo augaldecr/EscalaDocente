@@ -8,6 +8,7 @@
              Padding="8">
     <ScrollView>
         <StackLayout>
+            <Button Text="Atrás" x:Name="btnGuardar" Clicked="btnGuardar_Clicked" />
             <Label x:Name="lblIndicador" />
             <ListView x:Name="lstIndicadores" ItemSelected="lstIndicadores_ItemSelected" />
         </StackLayout>
