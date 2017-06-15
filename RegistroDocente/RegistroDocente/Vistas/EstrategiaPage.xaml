@@ -11,8 +11,8 @@
             <Entry x:Name="txtTexto" />
             <Editor x:Name="txtEstrategias" />
             <StackLayout Orientation="Horizontal">
-                <Button Text="Guardar" x:Name="btnGuardar" Clicked="btnGuardar_Clicked" />
-                <Button Text="Cancelar" x:Name="btnCancelar" Clicked="btnCancelar_Clicked" />
+                <Button Text="Guardar" x:Name="btnGuardar" />
+                <Button Text="Cancelar" x:Name="btnCancelar" />
             </StackLayout>
         </StackLayout>
     </ScrollView>

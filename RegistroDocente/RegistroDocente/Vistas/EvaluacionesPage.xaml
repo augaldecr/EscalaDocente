@@ -8,26 +8,10 @@
              Padding="8">
     <ScrollView>
         <StackLayout>
-            <Picker x:Name="pckInstituciones" SelectedIndexChanged="pckInstituciones_SelectedIndexChanged"
-                    Title="Instituciones" >
-                <Picker.Items>
-                    <x:String>Escuela Central de Guápiles</x:String>
-                    <x:String>Escuela Central de Guácimo</x:String>
-                    <x:String>Colegio Académico de Jiménez</x:String>
-                </Picker.Items>
+            <Picker x:Name="pckInstituciones" Title="Instituciones" >
             </Picker>
-            <Picker x:Name="pckSecciones" SelectedIndexChanged="pckSecciones_SelectedIndexChanged"
-                    Title="Secciones" />
-            <Picker x:Name="pckMaterias" SelectedIndexChanged="pckMaterias_SelectedIndexChanged"
-                    Title="Materias">
-                <Picker.Items>
-                    <x:String>Español</x:String>
-                    <x:String>Ciencias</x:String>
-                    <x:String>Matemáticas</x:String>
-                    <x:String>Estudios Sociales</x:String>
-                    <x:String>Cívica</x:String>
-                    <x:String>Inglés</x:String>
-                </Picker.Items>
+            <Picker x:Name="pckSecciones" Title="Secciones" />
+            <Picker x:Name="pckMaterias" Title="Materias">
             </Picker>
             <StackLayout>
                 <Label x:Name="lblIndicador"/>
@@ -37,15 +21,15 @@
                             <ViewCell>
                                 <StackLayout Orientation="Horizontal">
                                     <Label Text="{Binding NombreAbreviado}" />
-                                    <Entry Text="5" x:Name="txtind1" Keyboard="Numeric" Focused="txtind1_Focused" />
-                                    <Entry Text="5" x:Name="txtind2" Keyboard="Numeric" Focused="txtind2_Focused" />
-                                    <Entry Text="5" x:Name="txtind3" Keyboard="Numeric" Focused="txtind3_Focused" />
+                                    <Entry x:Name="txtind1" Keyboard="Numeric" />
+                                    <Entry x:Name="txtind2" Keyboard="Numeric" />
+                                    <Entry x:Name="txtind3" Keyboard="Numeric" />
                                     <Label Text="Punt: " />
-                                    <Entry Text="15" x:Name="txtPunt" Keyboard="Numeric" Focused="txtind3_Focused" />
+                                    <Entry x:Name="txtPunt" Keyboard="Numeric" />
                                     <Label Text="Cal: " />
-                                    <Entry Text="100" x:Name="txtCal" Keyboard="Numeric" Focused="txtind3_Focused" />
+                                    <Entry x:Name="txtCal" Keyboard="Numeric" />
                                     <Label Text="Porc: " />
-                                    <Entry Text="40" x:Name="txtPorc" Keyboard="Numeric" Focused="txtind3_Focused" />
+                                    <Entry x:Name="txtPorc" Keyboard="Numeric" />
                                 </StackLayout>
                             </ViewCell>
                         </DataTemplate>

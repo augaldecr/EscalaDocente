@@ -67,19 +67,12 @@ namespace RegistroDocente.ViewModels
                 {
                     SelectedAnho = value;
                     OnPropertyChanged("SelectedAnho");
-
-                    editAnhoPage(SelectedAnho);
                 }
             }
         }
         #endregion
 
         #region Methods
-
-        private async void editAnhoPage(Anho anho)
-        {
-            await Application.Current.MainPage.Navigation.PushModalAsync(new AnhoPage(anho));
-        }
 
         private async void openNewAnhoPage()
         {

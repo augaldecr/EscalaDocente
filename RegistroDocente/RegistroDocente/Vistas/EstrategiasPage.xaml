@@ -8,29 +8,13 @@
              Padding="8">
     <ScrollView>
         <StackLayout>
-            
-            <Picker x:Name="pckInstituciones" SelectedIndexChanged="pckInstituciones_SelectedIndexChanged"
-                    Title="Instituciones" >
-                <Picker.Items>
-                    <x:String>Escuela Central de Guápiles</x:String>
-                    <x:String>Escuela Central de Guácimo</x:String>
-                    <x:String>Colegio Académico de Jiménez</x:String>
-                </Picker.Items>
+            <Picker x:Name="pckInstituciones" Title="Instituciones" >
             </Picker>
             <Picker x:Name="pckSecciones" Title="Secciones" />
-            <Picker x:Name="pckMaterias" SelectedIndexChanged="pckMaterias_SelectedIndexChanged"
-                    Title="Materias">
-                <Picker.Items>
-                    <x:String>Español</x:String>
-                    <x:String>Ciencias</x:String>
-                    <x:String>Matemáticas</x:String>
-                    <x:String>Estudios Sociales</x:String>
-                    <x:String>Cívica</x:String>
-                    <x:String>Inglés</x:String>
-                </Picker.Items>
+            <Picker x:Name="pckMaterias" Title="Materias">
             </Picker>
             <StackLayout>
-                <ListView x:Name="lstIndicadores" ItemSelected="lstIndicadores_ItemSelected"/>
+                <ListView x:Name="lstIndicadores" />
             </StackLayout>
         </StackLayout>
     </ScrollView>

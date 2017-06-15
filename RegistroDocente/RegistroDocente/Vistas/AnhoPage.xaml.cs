@@ -17,17 +17,6 @@ namespace RegistroDocente.Vistas
         public AnhoPage()
         {
             InitializeComponent();
-            btnActualizar.IsVisible = false;
-            btnDelete.IsVisible = false;
-        }
-
-        public AnhoPage(Anho anho)
-        {
-            AnhoViewModel a = new AnhoViewModel(anho);
-            InitializeComponent();
-            btnGuardar.IsVisible = false;
-            btnNew.IsVisible = false;
-            BindingContext = a;
         }
     }
 }

@@ -15,7 +15,6 @@
         <StackLayout Padding="8">
             <Entry Placeholder="Nombre de la institución"/>
             <Entry Placeholder="Nombre de director(a)"/>
-
         </StackLayout>
     </StackLayout>
 </ContentPage>

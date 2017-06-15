@@ -41,7 +41,6 @@
     <Compile Include="Models\AdecuacionCurricular.cs" />
     <Compile Include="Models\Anho.cs" />
     <Compile Include="Models\Asignatura.cs" />
-    <Compile Include="Models\AsignaturaEvaluada.cs" />
     <Compile Include="Models\CalificacionXIndicadores.cs" />
     <Compile Include="Models\Canton.cs" />
     <Compile Include="Models\CategoriaDocente.cs" />
@@ -105,7 +104,9 @@
     <Compile Include="ViewModels\AsignaturaViewModel.cs" />
     <Compile Include="ViewModels\CantonViewModel.cs" />
     <Compile Include="ViewModels\CatalogOfClassesViewModel.cs" />
+    <Compile Include="ViewModels\DistritoViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
+    <Compile Include="ViewModels\PaisesViewModel.cs" />
     <Compile Include="ViewModels\PeriodosViewModel.cs" />
     <Compile Include="ViewModels\PersonaViewModel.cs" />
     <Compile Include="ViewModels\UsuarioViewModel.cs" />

@@ -22,15 +22,5 @@ namespace RegistroDocente.Vistas
             InitializeComponent();
             txtTexto.Text = obj;
         }
-
-        private void btnGuardar_Clicked(object sender, EventArgs e)
-        {
-            Navigation.PopModalAsync(true);
-        }
-
-        private void btnCancelar_Clicked(object sender, EventArgs e)
-        {
-            Navigation.PopModalAsync(true);
-        }
     }
 }

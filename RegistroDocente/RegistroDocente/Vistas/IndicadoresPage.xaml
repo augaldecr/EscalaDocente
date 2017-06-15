@@ -8,9 +8,9 @@
              Padding="8">
     <ScrollView>
         <StackLayout>
-            <Button Text="Atrás" x:Name="btnGuardar" Clicked="btnGuardar_Clicked" />
+            <Button Text="Atrás" x:Name="btnGuardar" />
             <Label x:Name="lblIndicador" />
-            <ListView x:Name="lstIndicadores" ItemSelected="lstIndicadores_ItemSelected" />
+            <ListView x:Name="lstIndicadores" />
         </StackLayout>
     </ScrollView>
 </ContentPage>

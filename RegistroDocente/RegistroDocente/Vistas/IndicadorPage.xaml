@@ -10,8 +10,8 @@
         <Entry x:Name="txtTexto" />
         <Entry x:Name="txtValor" Text="5"/>
         <StackLayout Orientation="Horizontal">
-            <Button Text="Guardar" x:Name="btnGuardar" Clicked="btnGuardar_Clicked" />
-            <Button Text="Cancelar" x:Name="btnCancelar" Clicked="btnCancelar_Clicked" />
+            <Button Text="Guardar" x:Name="btnGuardar" />
+            <Button Text="Cancelar" x:Name="btnCancelar" />
         </StackLayout>
     </StackLayout>
 </ContentPage>
